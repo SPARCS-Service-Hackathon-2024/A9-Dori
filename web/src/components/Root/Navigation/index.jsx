@@ -1,12 +1,15 @@
 import { memo } from "react";
+import { Link, useLocation } from "react-router-dom";
 import AdaptiveCenterDiv from "../../AdaptiveDiv/AdaptiveCenterDiv";
 import IconHome from "./IconHome";
 import IconInbox from "./IconInbox";
 import IconChat from "./IconChat";
 import IconMe from "./IconMe";
-import { Link } from "react-router-dom";
 
 const Button = ({ Icon, name = "", to = "/" }) => {
+  const { pathname } = useLocation();
+  const isSelected = pathname.startsWith(to);
+
   return (
     <Link to={to}>
       <div
@@ -20,12 +23,13 @@ const Button = ({ Icon, name = "", to = "/" }) => {
           cursor: "pointer",
         }}
       >
-        <Icon />
+        <Icon isSelected={isSelected} />
         <div
           css={{
             fontSize: "12px",
             lineHeight: "16px",
-            color: "#98A2B3",
+            color: isSelected ? "#444CE7" : "#98A2B3",
+            transition: "fill 0.2s ease-in-out",
           }}
         >
           {name}
@@ -57,10 +61,10 @@ const Navigation = () => {
           justifyContent: "space-around",
         }}
       >
-        <Button Icon={IconHome} name="홈" to="/" />
+        <Button Icon={IconHome} name="홈" to="/home" />
         <Button Icon={IconInbox} name="받은 제안" to="/suggest" />
         <Button Icon={IconChat} name="채팅" to="/chat" />
-        <Button Icon={IconMe} name="마이페이지" to="mypage" />
+        <Button Icon={IconMe} name="마이페이지" to="/mypage" />
       </AdaptiveCenterDiv>
     </div>
   );
