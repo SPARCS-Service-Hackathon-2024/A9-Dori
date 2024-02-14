@@ -8,7 +8,7 @@ import IconMe from "./IconMe";
 const Button = ({ Icon, name = "" }) => {
   return (
     <div
-      style={{
+      css={{
         // flexGrow: 1,
         display: "flex",
         flexDirection: "column",
@@ -19,7 +19,7 @@ const Button = ({ Icon, name = "" }) => {
     >
       <Icon />
       <div
-        style={{
+        css={{
           fontSize: "12px",
           lineHeight: "16px",
           color: "#98A2B3",
@@ -34,7 +34,7 @@ const Button = ({ Icon, name = "" }) => {
 const Navigation = () => {
   return (
     <div
-      style={{
+      css={{
         position: "fixed",
         paddingTop: "19px",
         paddingBottom: "max(env(safe-area-inset-bottom), 30px)",
@@ -47,7 +47,7 @@ const Navigation = () => {
       }}
     >
       <AdaptiveCenterDiv
-        style={{
+        css={{
           position: "relative",
           display: "flex",
           justifyContent: "space-around",

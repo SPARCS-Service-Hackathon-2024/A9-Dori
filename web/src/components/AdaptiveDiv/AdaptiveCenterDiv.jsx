@@ -1,6 +1,6 @@
 const AdaptiveCenterDiv = ({ children, ...divProps }) => (
   <div
-    style={{
+    css={{
       position: "relative",
       width: `calc(min(788px, 100%) - 20px)`,
       margin: "auto",
