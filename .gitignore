@@ -35,3 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### CUSTOM ###
+/src/main/resources/application.yml
+/src/main/java/nora/movlog/TODO.md
+/docs/TODO.md
