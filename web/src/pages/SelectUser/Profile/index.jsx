@@ -1,11 +1,14 @@
 import AdaptiveCenterDiv from "../../../components/AdaptiveDiv/AdaptiveCenterDiv";
-import Button from "../../../components/Button";
+import Footer from "../../../components/Footer";
 import Tag from "../../../components/Tag";
+import Bottom from "../Bottom";
+import Header from "../Header";
 import iconDefaultProfile from "./iconDefaultProfile.svg";
 
 const Profile = () => {
   return (
     <>
+      <Header />
       <div
         css={{
           height: "96px",
@@ -55,25 +58,16 @@ const Profile = () => {
       <div css={{ height: "88px" }} />
       <AdaptiveCenterDiv
         css={{
+          boxSizing: "border-box",
           padding: "16px",
           borderRadius: "8px",
           background: "#FFFFFF",
           boxShadow:
             "0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10)",
         }}
-      />
-      <div
-        css={{
-          position: "fixed",
-          bottom: "max(24px, env(safe-area-inset-bottom))",
-          left: "0",
-          width: "100%",
-        }}
-      >
-        <AdaptiveCenterDiv>
-          <Button>이 연구원 선택하기</Button>
-        </AdaptiveCenterDiv>
-      </div>
+      ></AdaptiveCenterDiv>
+      <Footer />
+      <Bottom text="이 연구원 선택하기" />
     </>
   );
 };
