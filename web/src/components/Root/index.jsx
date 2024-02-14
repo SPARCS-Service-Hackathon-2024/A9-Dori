@@ -1,6 +1,12 @@
+import { useLocation } from "react-router-dom";
+
 import Navigation from "./Navigation";
 
 const Root = ({ children }) => {
+  const { pathname } = useLocation();
+
+  const isDisplayNavigation = !pathname.includes("/selectUser");
+
   return (
     <div
       css={{
@@ -11,7 +17,7 @@ const Root = ({ children }) => {
       }}
     >
       {children}
-      <Navigation />
+      {isDisplayNavigation && <Navigation />}
     </div>
   );
 };
