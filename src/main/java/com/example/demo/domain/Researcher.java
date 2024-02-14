@@ -3,6 +3,7 @@ package com.example.demo.domain;
 import com.example.demo.domain.sub.*;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 public class Researcher extends Member {
 
@@ -35,22 +37,33 @@ public class Researcher extends Member {
             joinColumns = @JoinColumn(name = "strength_id"),
             inverseJoinColumns = @JoinColumn(name = "research_id")
     )
+    @Builder.Default
     private Set<Strength> strengths = new HashSet<>();              // 강점
 
     @OneToMany(mappedBy = "researcher", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<FormerWorkplace> formerWorkplaces = new HashSet<>();// 이전 직장
+    @Builder.Default
+    private List<FormerWorkplace> formerWorkplaces = new ArrayList<>();// 이전 직장
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
             joinColumns = @JoinColumn(name = "image_id"),
             inverseJoinColumns = @JoinColumn(name = "researcher_id")
     )
+    @Builder.Default
     private List<Image> images = new ArrayList<>();                 // 이미지
 
     @ManyToMany(mappedBy = "researchers")
+    @Builder.Default
     private List<Student> students = new ArrayList<>();             // 학생
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id")
     private Company company;                                        // 연구소
+
+    public void join(String loginId, String password, String name, String joinReason) {
+        setLoginId(loginId);
+        setPassword(password);
+        setName(name);
+        setJoinReason(joinReason);
+    }
 }
