@@ -19,21 +19,23 @@ public class ResearcherJoinDto {
 
     private String gender;
     private String degree;
+    private String strength;
     private String capacity;
     private boolean isWorking;
     private String profile;
+    private String position;
     private Set<String> formerWorkplaces;
-    private Set<String> strengths;
 
     public Researcher toEntity() {
         Researcher researcher = Researcher.builder()
                 .gender(Gender.of(gender))
                 .degree(Degree.of(degree))
+                .strength(Strength.of(strength))
                 .capacity(capacity)
                 .isWorking(isWorking)
                 .profile(profile)
+                .position(position)
                 .formerWorkplaces(FormerWorkplace.of(formerWorkplaces))
-                .strengths(Strength.of(strengths))
                 .build();
         researcher.join(loginId, password, name, joinReason);
 

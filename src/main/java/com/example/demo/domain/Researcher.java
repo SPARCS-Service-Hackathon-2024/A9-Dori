@@ -4,6 +4,7 @@ import com.example.demo.domain.sub.*;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Getter
 @Entity
 public class Researcher extends Member {
 
@@ -26,20 +28,18 @@ public class Researcher extends Member {
     private Gender gender;      // 성별
     @Enumerated(EnumType.STRING)
     private Degree degree;      // 학력
+    @Enumerated(EnumType.STRING)
+    private Strength strength;  // 강점
     private String capacity;    // 역량
     private boolean isWorking;  // 재직 여부
     private Long matchNumber;   // 매칭 횟수
     private String profile;     // 자기 소개
+    private String position;    // 직책
+    private boolean isRewarded; // 유무상 여부
+    private boolean forCompany; // 기업 대상
+    private boolean forStudent; // 학생 대상
 
     /* 연관 데이터 */
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            joinColumns = @JoinColumn(name = "strength_id"),
-            inverseJoinColumns = @JoinColumn(name = "research_id")
-    )
-    @Builder.Default
-    private Set<Strength> strengths = new HashSet<>();              // 강점
-
     @OneToMany(mappedBy = "researcher", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<FormerWorkplace> formerWorkplaces = new ArrayList<>();// 이전 직장
