@@ -1,6 +1,5 @@
-package com.example.demo.domain.sub;
+package com.example.demo.domain;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -10,12 +9,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Image {
+public class Strength {
 
     @Id @GeneratedValue
-    @Column(name = "image_id")
     private Long id;
 
-    private String originalFileName;
-    private String savedFileName;
+    private Type type;
+    private String description;
+
+    private enum Type {
+        SKILL,
+        IDEA,
+        CAREER
+    }
 }

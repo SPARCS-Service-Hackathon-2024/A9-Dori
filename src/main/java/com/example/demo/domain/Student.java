@@ -22,10 +22,18 @@ public class Student extends Member {
     private Gender gender;
     private String school;
 
+    /* 연관 데이터 */
     @ManyToMany
     @JoinTable(
             joinColumns = @JoinColumn(name = "researcher_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id")
     )
     private List<Researcher> researchers = new ArrayList<>();
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            joinColumns = @JoinColumn(name = "image_id"),
+            inverseJoinColumns = @JoinColumn(name = "researcher_id")
+    )
+    private List<Image> images = new ArrayList<>();
 }

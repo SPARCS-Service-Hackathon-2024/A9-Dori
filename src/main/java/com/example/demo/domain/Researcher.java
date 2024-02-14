@@ -40,6 +40,13 @@ public class Researcher extends Member {
     @OneToMany(mappedBy = "researcher", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<FormerWorkplace> formerWorkplaces = new HashSet<>();// 이전 직장
 
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            joinColumns = @JoinColumn(name = "image_id"),
+            inverseJoinColumns = @JoinColumn(name = "researcher_id")
+    )
+    private List<Image> images = new ArrayList<>();                 // 이미지
+
     @ManyToMany(mappedBy = "researchers")
     private List<Student> students = new ArrayList<>();             // 학생
 

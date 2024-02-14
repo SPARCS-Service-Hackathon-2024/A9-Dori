@@ -1,4 +1,4 @@
-package com.example.demo.domain.sub;
+package com.example.demo.domain;
 
 import com.example.demo.domain.Researcher;
 import jakarta.persistence.*;
@@ -14,6 +14,7 @@ public class FormerWorkplace {
     @Column(name = "former_workplace_id")
     private Long id;
 
+    /* 연관 데이터 */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "researcher_id")
     private Researcher researcher;

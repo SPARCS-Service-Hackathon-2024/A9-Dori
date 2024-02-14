@@ -20,4 +20,11 @@ public class Company extends Member {
     /* 연관 데이터 */
     @OneToMany(mappedBy = "company")
     private List<Researcher> researchers = new ArrayList<>();
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            joinColumns = @JoinColumn(name = "image_id"),
+            inverseJoinColumns = @JoinColumn(name = "researcher_id")
+    )
+    private List<Image> images = new ArrayList<>();                 // 이미지
 }
