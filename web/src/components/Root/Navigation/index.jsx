@@ -4,30 +4,34 @@ import IconHome from "./IconHome";
 import IconInbox from "./IconInbox";
 import IconChat from "./IconChat";
 import IconMe from "./IconMe";
+import { Link } from "react-router-dom";
 
-const Button = ({ Icon, name = "" }) => {
+const Button = ({ Icon, name = "", to = "/" }) => {
   return (
-    <div
-      css={{
-        // flexGrow: 1,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "6px",
-        cursor: "pointer",
-      }}
-    >
-      <Icon />
+    <Link to={to}>
       <div
         css={{
-          fontSize: "12px",
-          lineHeight: "16px",
-          color: "#98A2B3",
+          flexGrow: 1,
+          maxWidth: "60px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "6px",
+          cursor: "pointer",
         }}
       >
-        {name}
+        <Icon />
+        <div
+          css={{
+            fontSize: "12px",
+            lineHeight: "16px",
+            color: "#98A2B3",
+          }}
+        >
+          {name}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -53,10 +57,10 @@ const Navigation = () => {
           justifyContent: "space-around",
         }}
       >
-        <Button Icon={IconHome} name="홈" />
-        <Button Icon={IconInbox} name="받은 제안" />
-        <Button Icon={IconChat} name="채팅" />
-        <Button Icon={IconMe} name="마이페이지" />
+        <Button Icon={IconHome} name="홈" to="/" />
+        <Button Icon={IconInbox} name="받은 제안" to="/suggest" />
+        <Button Icon={IconChat} name="채팅" to="/chat" />
+        <Button Icon={IconMe} name="마이페이지" to="mypage" />
       </AdaptiveCenterDiv>
     </div>
   );
