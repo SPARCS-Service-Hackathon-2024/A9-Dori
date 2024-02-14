@@ -7,6 +7,7 @@ import Researcher from "./pages/Signup/Researcher";
 import Suggest from "./pages/Suggest";
 import Chat from "./pages/Chat";
 import Mypage from "./pages/Mypage";
+import SelectUser from "./pages/SelectUser";
 
 import "./App.css";
 
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/suggest" Component={Suggest} />
           <Route path="/chat" Component={Chat} />
           <Route path="/mypage" Component={Mypage} />
+          <Route path="/selectUser" Component={SelectUser} />
         </Routes>
       </Root>
     </BrowserRouter>

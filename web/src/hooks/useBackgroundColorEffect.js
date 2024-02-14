@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-const useBackgroundColor = (color = "#EEF4FF") => {
+export default (color = "#EEF4FF") => {
   const cachedColor = useRef();
   useEffect(() => {
     cachedColor.current = document.body.style.background;
@@ -10,5 +10,3 @@ const useBackgroundColor = (color = "#EEF4FF") => {
     };
   }, []);
 };
-
-export default useBackgroundColor;
