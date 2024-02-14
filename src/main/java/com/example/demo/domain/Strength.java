@@ -17,7 +17,7 @@ public class Strength {
     private Type type;
     private String description;
 
-    private enum Type {
+    public enum Type {
         SKILL,
         IDEA,
         CAREER
