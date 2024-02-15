@@ -13,7 +13,8 @@ const Root = ({ children }) => {
   const isDisplayNavigation =
     !pathname.includes("/selectUser") &&
     !pathname.includes("/login") &&
-    !pathname.includes("/signup");
+    !pathname.includes("/signup") &&
+    !pathname.includes("/chat/talk");
 
   const [userInfo, setUserInfo] = useRecoilState(userInfoAtom);
   useEffect(() => {
