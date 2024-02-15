@@ -1,5 +1,5 @@
 import AdaptiveCenterDiv from "../../../components/AdaptiveDiv/AdaptiveCenterDiv";
-import AdaptiveHorizontalScroll from "../../../components/AdaptiveDiv/AdaptivehorizontalScroll";
+import AdaptiveHorizontalScroll from "../../../components/AdaptiveDiv/AdaptiveHorizontalScroll";
 import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
 import FormLabel from "../../../components/Form/FormLabel";
