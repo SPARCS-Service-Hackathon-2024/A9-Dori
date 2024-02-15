@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import AdaptiveCenterDiv from "../../../components/AdaptiveDiv/AdaptiveCenterDiv";
 import Footer from "../../../components/Footer";
 import Bottom from "../Bottom";
@@ -5,6 +6,11 @@ import Bottom from "../Bottom";
 import background from "./background.svg";
 
 const Success = () => {
+  const navigate = useNavigate();
+  const onClick = () => {
+    navigate("/chat");
+  };
+
   const styleText = {
     fontSize: "28px",
     fontWeight: 700,
@@ -51,7 +57,7 @@ const Success = () => {
         </div>
       </AdaptiveCenterDiv>
       <Footer />
-      <Bottom text="확인" />
+      <Bottom text="확인" onClickButton={onClick} />
     </>
   );
 };

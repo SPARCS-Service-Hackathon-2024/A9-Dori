@@ -91,7 +91,7 @@ const Profile = ({ onNext }) => {
               color: "#667085",
             }}
           >
-            국방과학연구소 본원
+            한국솔라에너지
           </div>
           <div
             css={{
@@ -102,7 +102,7 @@ const Profile = ({ onNext }) => {
               color: "#98A2B3",
             }}
           >
-            본부장
+            주임 연구원
           </div>
           <div
             css={{
@@ -113,7 +113,8 @@ const Profile = ({ onNext }) => {
             }}
           >
             <HashTag name="기업" />
-            <HashTag name="기업" />
+            <HashTag name="학생" />
+            <HashTag name="유상" />
           </div>
           <div
             css={{
@@ -122,9 +123,9 @@ const Profile = ({ onNext }) => {
               gap: "8px",
             }}
           >
-            <div css={styleAbility}>무기제작 능력</div>
-            <div css={styleAbility}>전기/전자 석사</div>
-            <div css={styleAbility}>보안 기술</div>
+            <div css={styleAbility}>＃태양광 패널 오염 제거 기술</div>
+            <div css={styleAbility}>#전기/전자 석사</div>
+            <div css={styleAbility}>#보안 기술</div>
           </div>
         </Container>
         <FormLabel
@@ -143,7 +144,10 @@ const Profile = ({ onNext }) => {
               fontWeight: 600,
             }}
           >
-            자기 계발은 목표를 설정하고 달성하기 위한 여정입니다.{" "}
+            태양광 패널은 표면이 오염되기 쉬워 발전효율이 떨어지고, 주기적인
+            유지보수가 필요하다는 단점이 있는데, 이를 극복할 기술 보유 하고
+            있습니다. 관심 있으시다면 연락 부탁드립니다. 재생에너지에 관심이
+            있는 학생분들의 자문, 멘토링 요구에도 항상 열려 있습니다 :{")"}
           </div>
         </Container>
         <FormLabel
@@ -157,14 +161,12 @@ const Profile = ({ onNext }) => {
       </AdaptiveCenterDiv>
       <AdaptiveHorizontalScroll>
         <div css={{ display: "flex", gap: "8px" }}>
-          <History />
-          <History />
-          <History />
-          <History />
-          <History />
-          <History />
-          <History />
-          <History />
+          <History name="포스코인터내셔널" tags={["기업", "유상"]} />
+          <History name="SK텔레콤" tags={["기업", "무상"]} />
+          <History name="한국전력" tags={["기업", "무상"]} />
+          <History name="포스코인터내셔널" tags={["기업", "유상"]} />
+          <History name="SK텔레콤" tags={["기업", "무상"]} />
+          <History name="한국전력" tags={["기업", "무상"]} />
         </div>
       </AdaptiveHorizontalScroll>
       <Footer />

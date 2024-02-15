@@ -2,6 +2,7 @@ import { memo } from "react";
 import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
 import Tag from "../../components/Tag";
 import HashTag from "../../components/Tag/HashTag";
+import { Link } from "react-router-dom";
 
 const styleAbility = {
   flexGrow: 1,
@@ -19,99 +20,101 @@ const ResearchElem = ({
   roleName = "본부장",
 }) => {
   return (
-    <div
-      css={{
-        background: "#FFFFFF",
-        padding: "16px 0",
-      }}
-    >
-      <AdaptiveCenterDiv>
-        <div
-          css={{
-            display: "flex",
-            gap: "8px",
-            flexWrap: "wrap",
-          }}
-        >
-          <Tag type="dori" />
-          <Tag type="idea" />
-          <Tag type="tech" />
-        </div>
-        <div css={{ height: "8px" }} />
-        <div css={{ display: "flex", gap: "8px" }}>
+    <Link to="/selectUser">
+      <div
+        css={{
+          background: "#FFFFFF",
+          padding: "16px 0",
+        }}
+      >
+        <AdaptiveCenterDiv>
           <div
             css={{
-              width: 0,
-              flexGrow: 1,
+              display: "flex",
+              gap: "8px",
+              flexWrap: "wrap",
             }}
           >
+            <Tag type="dori" />
+            <Tag type="idea" />
+            <Tag type="tech" />
+          </div>
+          <div css={{ height: "8px" }} />
+          <div css={{ display: "flex", gap: "8px" }}>
             <div
               css={{
-                fontSize: "16px",
-                fontWeight: 800,
-                lineHeight: "20px",
-                color: "#344054",
+                width: 0,
+                flexGrow: 1,
               }}
             >
-              {name}
+              <div
+                css={{
+                  fontSize: "16px",
+                  fontWeight: 800,
+                  lineHeight: "20px",
+                  color: "#344054",
+                }}
+              >
+                {name}
+              </div>
+              <div
+                css={{
+                  marginTop: "8px",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  lineHeight: "20px",
+                  color: "#667085",
+                }}
+              >
+                {companyName}
+              </div>
+              <div
+                css={{
+                  marginTop: "4px",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  lineHeight: "20px",
+                  color: "#98A2B3",
+                }}
+              >
+                {roleName}
+              </div>
+              <div
+                css={{
+                  marginTop: "8px",
+                  display: "flex",
+                  gap: "8px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <HashTag name="기업" />
+              </div>
             </div>
             <div
               css={{
-                marginTop: "8px",
-                fontSize: "14px",
-                fontWeight: 700,
-                lineHeight: "20px",
-                color: "#667085",
+                width: "82px",
+                height: "82px",
+                borderRadius: "50%",
+                background: "#D9D9D9",
+                overflow: "hidden",
+                position: "relative",
               }}
-            >
-              {companyName}
-            </div>
-            <div
-              css={{
-                marginTop: "4px",
-                fontSize: "14px",
-                fontWeight: 700,
-                lineHeight: "20px",
-                color: "#98A2B3",
-              }}
-            >
-              {roleName}
-            </div>
-            <div
-              css={{
-                marginTop: "8px",
-                display: "flex",
-                gap: "8px",
-                flexWrap: "wrap",
-              }}
-            >
-              <HashTag name="기업" />
-            </div>
+            ></div>
           </div>
           <div
             css={{
-              width: "82px",
-              height: "82px",
-              borderRadius: "50%",
-              background: "#D9D9D9",
-              overflow: "hidden",
-              position: "relative",
+              marginTop: "4px",
+              display: "flex",
+              gap: "8px",
             }}
-          ></div>
-        </div>
-        <div
-          css={{
-            marginTop: "4px",
-            display: "flex",
-            gap: "8px",
-          }}
-        >
-          <div css={styleAbility}>무기제작 능력</div>
-          <div css={styleAbility}>전기/전자 석사</div>
-          <div css={styleAbility}>보안 기술</div>
-        </div>
-      </AdaptiveCenterDiv>
-    </div>
+          >
+            <div css={styleAbility}>무기제작 능력</div>
+            <div css={styleAbility}>전기/전자 석사</div>
+            <div css={styleAbility}>보안 기술</div>
+          </div>
+        </AdaptiveCenterDiv>
+      </div>
+    </Link>
   );
 };
 
