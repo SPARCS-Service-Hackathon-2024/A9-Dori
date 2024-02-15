@@ -1,5 +1,5 @@
 import AdaptiveCenterDiv from "../../../components/AdaptiveDiv/AdaptiveCenterDiv";
-import AdaptivehorizontalScroll from "../../../components/AdaptiveDiv/AdaptivehorizontalScroll";
+import AdaptiveHorizontalScroll from "../../../components/AdaptiveDiv/AdaptivehorizontalScroll";
 import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
 import Tag from "../../../components/Tag";
@@ -155,7 +155,7 @@ const Profile = ({ onNext }) => {
           Dori 활동 내역
         </Title>
       </AdaptiveCenterDiv>
-      <AdaptivehorizontalScroll>
+      <AdaptiveHorizontalScroll>
         <div css={{ display: "flex", gap: "8px" }}>
           <History />
           <History />
@@ -166,7 +166,7 @@ const Profile = ({ onNext }) => {
           <History />
           <History />
         </div>
-      </AdaptivehorizontalScroll>
+      </AdaptiveHorizontalScroll>
       <Footer />
       <Bottom text="이 연구원 선택하기" onClickButton={onNext} />
     </>
