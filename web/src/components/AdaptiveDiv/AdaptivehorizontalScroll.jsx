@@ -1,6 +1,7 @@
+import { forwardRef } from "react";
 import { css } from "@emotion/react";
 
-const AdaptiveHorizontalScroll = ({ children, ...divProps }) => {
+const AdaptiveHorizontalScroll = ({ children, ...divProps }, ref) => {
   return (
     <div
       css={css`
@@ -14,6 +15,7 @@ const AdaptiveHorizontalScroll = ({ children, ...divProps }) => {
           display: none;
         }
       `}
+      ref={ref}
       {...divProps}
     >
       <div
@@ -27,4 +29,4 @@ const AdaptiveHorizontalScroll = ({ children, ...divProps }) => {
   );
 };
 
-export default AdaptiveHorizontalScroll;
+export default forwardRef(AdaptiveHorizontalScroll);
