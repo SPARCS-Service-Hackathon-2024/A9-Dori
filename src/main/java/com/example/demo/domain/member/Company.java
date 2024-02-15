@@ -29,7 +29,12 @@ public class Company extends Member {
     private boolean isMania;    // 도리 매니아 여부
 
     /* 연관 데이터 */
-    @OneToMany(mappedBy = "company")
+    @ManyToMany
+    @JoinTable(
+            joinColumns = @JoinColumn(name = "researcher_id"),
+            inverseJoinColumns = @JoinColumn(name = "company_id")
+    )
+    @Builder.Default
     private List<Researcher> researchers = new ArrayList<>();
 
     public enum Seek {

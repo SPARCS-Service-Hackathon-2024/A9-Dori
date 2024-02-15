@@ -12,13 +12,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class StudentService {
 
-    private StudentRepository studentRepository;
-    private ResearcherRepository researcherRepository;
-    private StudentMatchOfferRepository offerRepository;
+    private final StudentRepository studentRepository;
+    private final ResearcherRepository researcherRepository;
+    private final StudentMatchOfferRepository offerRepository;
 
     @Transactional
     public Student join(StudentJoinDto dto) {
@@ -40,5 +42,10 @@ public class StudentService {
                 .build();
 
         return offerRepository.save(offer);
+    }
+
+    @Transactional
+    public List<Student> findAll() {
+        return studentRepository.findAll();
     }
 }

@@ -35,5 +35,6 @@ public class Student extends Member {
             joinColumns = @JoinColumn(name = "researcher_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id")
     )
+    @Builder.Default
     private List<Researcher> researchers = new ArrayList<>();    // 오퍼만 넣은 연구자
 }

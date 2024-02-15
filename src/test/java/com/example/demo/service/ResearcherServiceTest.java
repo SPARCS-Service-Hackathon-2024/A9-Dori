@@ -1,8 +1,12 @@
 package com.example.demo.service;
 
+import com.example.demo.domain.member.Company;
 import com.example.demo.domain.member.Researcher;
+import com.example.demo.domain.member.Student;
 import com.example.demo.domain.nonEntity.Strength;
+import com.example.demo.utils.dto.CompanyJoinDto;
 import com.example.demo.utils.dto.ResearcherJoinDto;
+import com.example.demo.utils.dto.StudentJoinDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,7 +30,15 @@ class ResearcherServiceTest {
     @Autowired
     ResearcherService researcherService;
 
-    private List<ResearcherJoinDto> dtos = new ArrayList<>();
+    @Autowired
+    CompanyService companyService;
+
+    @Autowired
+    StudentService studentService;
+
+    private List<ResearcherJoinDto> researcherDtos = new ArrayList<>();
+    private List<CompanyJoinDto> companyDtos = new ArrayList<>();
+    private List<StudentJoinDto> studentDtos = new ArrayList<>();
 
     @BeforeEach
     void init() {
@@ -39,7 +51,7 @@ class ResearcherServiceTest {
         // given
 
         // when
-        Researcher researcher = researcherService.join(dtos.get(0));
+        Researcher researcher = researcherService.join(researcherDtos.get(0));
 
         // then
         assertThat(researcher.getName()).isEqualTo("konu");
@@ -50,7 +62,7 @@ class ResearcherServiceTest {
     public void find() throws Exception {
         // given
         for (int i = 0; i < 10; i++)
-            researcherService.join(dtos.get(i));
+            researcherService.join(researcherDtos.get(i));
 
         // when
         List<Researcher> researchers = researcherService.find("konu", null, null, null, Strength.SKILL);
@@ -59,9 +71,42 @@ class ResearcherServiceTest {
         assertThat(researchers.size()).isEqualTo(10);
     }
 
+    @Test
+    public void matchCompany() throws Exception {
+        // given
+        Researcher researcher = researcherService.join(researcherDtos.get(0));
+        for (CompanyJoinDto dto : companyDtos)
+            companyService.join(dto);
+
+        // when
+        List<Company> companies = companyService.findAll();
+        companies.forEach(company ->
+                        researcherService.matchCompany(researcher.getId(), company.getId()));
+
+        // then
+        assertThat(researcher.getCompanies().size()).isEqualTo(10);
+    }
+
+    @Test
+    public void matchStudent() throws Exception {
+        // given
+        Researcher researcher = researcherService.join(researcherDtos.get(0));
+        for (StudentJoinDto dto : studentDtos)
+            studentService.join(dto);
+
+        // when
+        List<Student> students = studentService.findAll();
+        students.forEach(student ->
+                researcherService.matchStudent(researcher.getId(), student.getId()));
+
+        // then
+        assertThat(researcher.getStudents().size()).isEqualTo(10);
+    }
+
+
     private void generateDto() {
         for (int i = 0; i < 10; i++) {
-            dtos.add(new ResearcherJoinDto(
+            researcherDtos.add(new ResearcherJoinDto(
                     "jinkonu",
                     "1234",
                     "konu",
@@ -76,6 +121,25 @@ class ResearcherServiceTest {
                     true,
                     true,
                     Set.of("1", "2")
+            ));
+
+            companyDtos.add(new CompanyJoinDto(
+                    "jinkonu",
+                    "1234",
+                    "konu",
+                    "지인 소개",
+                    "여성",
+                    "자문"
+            ));
+
+            studentDtos.add(new StudentJoinDto(
+                    "jinkonu",
+                    "1234",
+                    "konu",
+                    "지인 소개",
+                    "여성",
+                    "자문",
+                    "hi"
             ));
         }
     }

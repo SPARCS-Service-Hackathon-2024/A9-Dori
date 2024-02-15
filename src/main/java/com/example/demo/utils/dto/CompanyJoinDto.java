@@ -14,7 +14,6 @@ public class CompanyJoinDto {
     private String joinReason;  // 가입 이유
     private String introduce;   // 소개말
     private String seek;          // 검색 조건
-    private boolean isMania;    // 도리 매니아 여부
 
     public Company toEntity() {
         Company company = Company.builder()
@@ -22,7 +21,6 @@ public class CompanyJoinDto {
                 .joinReason(joinReason)
                 .introduce(introduce)
                 .seek(Seek.of(seek))
-                .isMania(isMania)
                 .build();
         company.join(loginId, password);
 

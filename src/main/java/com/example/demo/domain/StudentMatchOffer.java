@@ -34,5 +34,4 @@ public class StudentMatchOffer {
 
 
     /* 도메인 로직 */
-
 }

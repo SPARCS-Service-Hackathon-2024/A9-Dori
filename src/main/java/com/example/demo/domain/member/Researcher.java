@@ -41,21 +41,23 @@ public class Researcher extends Member {
     /* 연관 데이터 */
     @OneToMany(mappedBy = "researcher", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
-    private List<FormerWorkplace> formerWorkplaces = new ArrayList<>();// 이전 직장
+    private List<FormerWorkplace> formerWorkplaces = new ArrayList<>(); // 이전 직장
 
     @ManyToMany(mappedBy = "researchers")
     @Builder.Default
-    private List<Student> students = new ArrayList<>();             // 학생
+    private List<Student> students = new ArrayList<>();                 // 학생
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id")
-    private Company company;                                        // 연구소
+    @ManyToMany(mappedBy = "researchers")
+    @Builder.Default
+    private List<Company> companies = new ArrayList<>();                // 연구소
 
 
     /* 도메인 로직 */
     public void match(Company company, Student student) {
-        if (company != null)
-            this.company = company;
+        if (company != null) {
+            this.companies.add(company);
+            company.getResearchers().add(this);
+        }
 
         if (student != null) {
             this.students.add(student);
