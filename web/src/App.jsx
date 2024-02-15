@@ -16,10 +16,11 @@ import Mypage from "./pages/Mypage";
 import SelectUser from "./pages/SelectUser";
 import ResearcherHere from "./pages/ResearcherHere";
 import ResearcherFind from "./pages/ResearcherFind";
+import Talk from "./pages/Chat/Talk";
+import Communicate from "./pages/Communicate";
 
 import "./App.css";
 import "./assets/fonts/index.css";
-import Talk from "./pages/Chat/Talk";
 
 const App = () => (
   <RecoilRoot>
@@ -39,8 +40,9 @@ const App = () => (
           <Route path="/chat/talk" Component={Talk} />
           <Route path="/mypage" Component={Mypage} />
           <Route path="/selectUser" Component={SelectUser} />
-          <Route path="/ResearcherHere" Component={ResearcherHere} />
-          <Route path="/ResearcherFind" Component={ResearcherFind} />
+          <Route path="/researcherHere" Component={ResearcherHere} />
+          <Route path="/researcherFind" Component={ResearcherFind} />
+          <Route path="/communicate" Component={Communicate} />
         </Routes>
       </Root>
     </BrowserRouter>

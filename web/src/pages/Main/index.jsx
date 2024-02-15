@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
-import AdaptiveHorizontalScroll from "../../components/AdaptiveDiv/AdaptivehorizontalScroll";
+import AdaptiveHorizontalScroll from "../../components/AdaptiveDiv/AdaptiveHorizontalScroll";
 import useBackgroundColorEffect from "../../hooks/useBackgroundColorEffect";
 import HotResearcher from "./HotResearcher";
 
