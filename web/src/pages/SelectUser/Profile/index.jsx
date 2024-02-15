@@ -6,6 +6,8 @@ import Tag from "../../../components/Tag";
 import HashTag from "../../../components/Tag/HashTag";
 import Bottom from "../Bottom";
 import Header from "../Header";
+import Title from "../Title";
+import History from "./History";
 import iconDefaultProfile from "./iconDefaultProfile.svg";
 
 const styleAbility = {
@@ -17,7 +19,7 @@ const styleAbility = {
   color: "#6172F3",
 };
 
-const Profile = () => {
+const Profile = ({ onNext }) => {
   return (
     <>
       <Header />
@@ -125,41 +127,48 @@ const Profile = () => {
             <div css={styleAbility}>보안 기술</div>
           </div>
         </Container>
-        <div
+        <Title
           css={{
             marginTop: "16px",
             marginBottom: "8px",
-            fontSize: "14px",
-            lineHeight: "20px",
-            fontWeight: 700,
-            color: "#344054",
           }}
         >
           자기소개/하고 싶은 말
-        </div>
-        <Container css={{ padding: "16px" }}></Container>
-        <div
+        </Title>
+        <Container css={{ padding: "16px" }}>
+          <div
+            css={{
+              fontSize: "14px",
+              color: "#667085",
+              fontWeight: 600,
+            }}
+          >
+            자기 계발은 목표를 설정하고 달성하기 위한 여정입니다.{" "}
+          </div>
+        </Container>
+        <Title
           css={{
             marginTop: "16px",
             marginBottom: "8px",
-            fontSize: "14px",
-            lineHeight: "20px",
-            fontWeight: 700,
-            color: "#344054",
           }}
         >
           Dori 활동 내역
-        </div>
+        </Title>
       </AdaptiveCenterDiv>
       <AdaptivehorizontalScroll>
         <div css={{ display: "flex", gap: "8px" }}>
-          <Container
-            css={{ width: "148px", height: "172px", flexShrink: 0 }}
-          ></Container>
+          <History />
+          <History />
+          <History />
+          <History />
+          <History />
+          <History />
+          <History />
+          <History />
         </div>
       </AdaptivehorizontalScroll>
       <Footer />
-      <Bottom text="이 연구원 선택하기" />
+      <Bottom text="이 연구원 선택하기" onClickButton={onNext} />
     </>
   );
 };

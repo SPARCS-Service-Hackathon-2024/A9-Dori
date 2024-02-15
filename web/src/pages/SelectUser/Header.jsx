@@ -1,7 +1,7 @@
 import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
 import iconBack from "./iconBack.svg";
 
-const Header = () => (
+const Header = ({ onClickBack }) => (
   <>
     <div
       css={{
@@ -21,7 +21,12 @@ const Header = () => (
           height: "100%",
         }}
       >
-        <img src={iconBack} alt="back" css={{ cursor: "pointer" }} />
+        <img
+          src={iconBack}
+          alt="back"
+          css={{ cursor: "pointer" }}
+          onClick={onClickBack}
+        />
       </AdaptiveCenterDiv>
     </div>
     <div
