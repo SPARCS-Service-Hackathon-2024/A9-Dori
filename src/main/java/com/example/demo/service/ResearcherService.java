@@ -4,10 +4,7 @@ import com.example.demo.domain.member.Company;
 import com.example.demo.domain.member.Researcher;
 import com.example.demo.domain.member.Student;
 import com.example.demo.domain.nonEntity.Strength;
-import com.example.demo.repository.CompanyRepository;
-import com.example.demo.repository.ResearcherQueryDslRepository;
-import com.example.demo.repository.ResearcherRepository;
-import com.example.demo.repository.StudentRepository;
+import com.example.demo.repository.*;
 import com.example.demo.utils.dto.ResearcherJoinDto;
 import com.example.demo.utils.dto.ResearcherSearchDto;
 import lombok.RequiredArgsConstructor;
@@ -47,6 +44,11 @@ public class ResearcherService {
                 .build();
 
         return researcherQueryDslRepository.search(dto);
+    }
+
+    @Transactional
+    public List<Researcher> findAll() {
+        return researcherRepository.findAll();
     }
 
     @Transactional
