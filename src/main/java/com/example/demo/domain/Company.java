@@ -17,10 +17,19 @@ public class Company extends Member {
     @Column(name = "company_id")
     private Long id;
 
+    /* 비연관 데이터 */
     private String name;
     private String joinReason;
+    private Seek seek;
+    private boolean isMania;
 
     /* 연관 데이터 */
     @OneToMany(mappedBy = "company")
     private List<Researcher> researchers = new ArrayList<>();
+
+    public enum Seek {
+        CONSULTATION,
+        RECRUIT,
+        ETC
+    }
 }
