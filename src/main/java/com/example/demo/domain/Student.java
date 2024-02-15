@@ -18,11 +18,11 @@ public class Student extends Member {
     @Column(name = "student_id")
     private Long id;
 
-    private String name;
-    private String joinReason;
+    private String name;        // 이름
+    private String joinReason;  // 가입 이유
     @Enumerated(EnumType.STRING)
-    private Gender gender;
-    private String school;
+    private Gender gender;      // 성별
+    private String school;      // 학교
     private String introduce;   // 소개말
 
     /* 연관 데이터 */
