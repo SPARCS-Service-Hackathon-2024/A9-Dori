@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -87,17 +88,21 @@ public class ResearcherService {
     }
 
     @Transactional
-    public void matchCompany(String researcherId, String companyId) {
-        Researcher researcher = researcherRepository.findById(researcherId).get();
-        Company company = companyRepository.findById(companyId).get();
+    public void acceptOfferFromCompany(Long offerId) {
+        CompanyMatchOffer offer = companyOfferRepository.findById(offerId).get();
+
+        Researcher researcher = researcherRepository.findById(offer.getResearcher().getId()).get();
+        Company company = companyRepository.findById(offer.getCompany().getId()).get();
 
         researcher.match(company, null);
     }
 
     @Transactional
-    public void matchStudent(String researcherId, String studentId) {
-        Researcher researcher = researcherRepository.findById(researcherId).get();
-        Student student = studentRepository.findById(studentId).get();
+    public void acceptOfferFromStudent(Long offerId) {
+        StudentMatchOffer offer = studentOfferRepository.findById(offerId).get();
+
+        Researcher researcher = researcherRepository.findById(offer.getResearcher().getId()).get();
+        Student student = studentRepository.findById(offer.getStudent().getId()).get();
 
         researcher.match(null, student);
     }

@@ -61,4 +61,14 @@ public class ResearcherController {
     public void offer(@RequestBody StudentOfferDto dto) {
         researcherService.offerToStudent(dto);
     }
+
+    @PostMapping("/offer/company/{id}/accept")
+    public void acceptOfferFromCompany(@PathVariable("id") Long offerId) {
+        researcherService.acceptOfferFromCompany(offerId);
+    }
+
+    @PostMapping("/offer/student/{id}/accept")
+    public void acceptOfferFromStudent(@PathVariable("id") Long offerId) {
+        researcherService.acceptOfferFromStudent(offerId);
+    }
 }

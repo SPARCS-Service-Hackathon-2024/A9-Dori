@@ -87,7 +87,7 @@ class ResearcherServiceTest {
         // when
         List<Company> companies = companyService.findAll();
         companies.forEach(company ->
-                        researcherService.matchCompany(researcher.getId(), company.getId()));
+                        researcherService.acceptOfferFromCompany(researcher.getId(), company.getId()));
 
         // then
         assertThat(researcher.getCompanies().size()).isEqualTo(10);
@@ -103,7 +103,7 @@ class ResearcherServiceTest {
         // when
         List<Student> students = studentService.findAll();
         students.forEach(student ->
-                researcherService.matchStudent(researcher.getId(), student.getId()));
+                researcherService.acceptOfferFromStudent(researcher.getId(), student.getId()));
 
         // then
         assertThat(researcher.getStudents().size()).isEqualTo(10);
