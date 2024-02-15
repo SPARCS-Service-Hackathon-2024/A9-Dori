@@ -20,8 +20,8 @@ public class OfferDto {
     private String money;
     private LocalDateTime createdAt;
 
-    private Long clientId;
-    private Long researcherId;
+    private String clientId;
+    private String researcherId;
 
     private Type type;
 

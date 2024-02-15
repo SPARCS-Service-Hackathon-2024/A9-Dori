@@ -11,6 +11,7 @@ import lombok.Getter;
 @Getter
 public class ResearcherJoinDto {
 
+    private String id;
     private String loginId;
     private String password;
     private String name;
@@ -29,6 +30,7 @@ public class ResearcherJoinDto {
 
     public Researcher toEntity() {
         Researcher researcher = Researcher.builder()
+                .id(id)
                 .name(name)
                 .joinReason(joinReason)
                 .gender(Gender.of(gender))

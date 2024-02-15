@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class StudentJoinDto {
 
+    private String id;
     private String loginId;
     private String password;
 
@@ -18,6 +19,7 @@ public class StudentJoinDto {
 
     public Student toEntity() {
         Student student = Student.builder()
+                .id(id)
                 .name(name)
                 .joinReason(joinReason)
                 .gender(Gender.of(gender))

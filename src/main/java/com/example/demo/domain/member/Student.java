@@ -18,9 +18,9 @@ import java.util.List;
 @Entity
 public class Student extends Member {
 
-    @Id @GeneratedValue
+    @Id
     @Column(name = "student_id")
-    private Long id;
+    private String id;
 
     private String name;        // 이름
     private String joinReason;  // 가입 이유

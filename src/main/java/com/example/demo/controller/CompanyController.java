@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/student")
+@RequestMapping("/company")
 @RestController
 public class CompanyController {
 

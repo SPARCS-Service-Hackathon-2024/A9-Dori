@@ -14,9 +14,9 @@ import java.util.List;
 @Entity
 public class Researcher extends Member {
 
-    @Id @GeneratedValue
+    @Id
     @Column(name = "researcher_id")
-    private Long id;
+    private String id;
 
     /* 비연관 데이터 */
     @Enumerated(EnumType.STRING)

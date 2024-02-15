@@ -26,6 +26,7 @@ public class StudentMatchOffer extends BaseEntity {
     private String requirement;
     private String money;
     private boolean isRewarded;
+    private boolean fromResearcher;
 
     @ManyToOne
     @JoinColumn(name = "student_id")

@@ -30,7 +30,7 @@ public class ResearcherController {
     }
 
     @GetMapping("/{id}")
-    public ResearcherProfileDto profile(@PathVariable Long id) {
+    public ResearcherProfileDto profile(@PathVariable String id) {
         Researcher researcher = researcherService.findBy(id);
 
         return ResearcherProfileDto.of(researcher);
@@ -45,10 +45,20 @@ public class ResearcherController {
     }
 
     @GetMapping("/{id}/offers")
-    public List<OfferDto> offers(@PathVariable Long id) {
+    public List<OfferDto> offers(@PathVariable String id) {
         List<CompanyMatchOffer> companyOffers = offerService.findCompanyOffers(id);
         List<StudentMatchOffer> studentOffers = offerService.findStudentOffers(id);
 
         return OfferDto.of(companyOffers, studentOffers);
+    }
+
+    @PostMapping("/offer/company")
+    public void offer(@RequestBody CompanyOfferDto dto) {
+        researcherService.offerToCompany(dto);
+    }
+
+    @PostMapping("/offer/student")
+    public void offer(@RequestBody StudentOfferDto dto) {
+        researcherService.offerToStudent(dto);
     }
 }

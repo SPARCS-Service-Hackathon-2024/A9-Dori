@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CompanyJoinDto {
 
+    private String id;
     private String loginId;
     private String password;
 
@@ -17,6 +18,7 @@ public class CompanyJoinDto {
 
     public Company toEntity() {
         Company company = Company.builder()
+                .id(id)
                 .name(name)
                 .joinReason(joinReason)
                 .introduce(introduce)

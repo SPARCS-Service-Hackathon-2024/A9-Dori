@@ -12,6 +12,6 @@ public class CompanyOfferDto {
     private String money;
     private boolean isRewarded;
 
-    private Long companyId;
-    private Long researcherId;
+    private String companyId;
+    private String researcherId;
 }

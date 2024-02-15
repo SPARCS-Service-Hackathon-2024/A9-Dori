@@ -17,9 +17,9 @@ import java.util.List;
 @Entity
 public class Company extends Member {
 
-    @Id @GeneratedValue
+    @Id
     @Column(name = "company_id")
-    private Long id;
+    private String id;
 
     /* 비연관 데이터 */
     private String name;        // 이름

@@ -39,6 +39,7 @@ public class StudentService {
                 .requirement(dto.getRequirement())
                 .money(dto.getMoney())
                 .isRewarded(dto.isRewarded())
+                .fromResearcher(false)
                 .student(student)
                 .researcher(researcher)
                 .build();

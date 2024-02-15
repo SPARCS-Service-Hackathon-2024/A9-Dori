@@ -19,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -114,6 +113,7 @@ class ResearcherServiceTest {
     private void generateDto() {
         for (int i = 0; i < 10; i++) {
             researcherDtos.add(new ResearcherJoinDto(
+                    "a"+i,
                     "jinkonu",
                     "1234",
                     "konu",
@@ -131,6 +131,7 @@ class ResearcherServiceTest {
             ));
 
             companyDtos.add(new CompanyJoinDto(
+                    "a"+i,
                     "jinkonu",
                     "1234",
                     "konu",
@@ -140,6 +141,7 @@ class ResearcherServiceTest {
             ));
 
             studentDtos.add(new StudentJoinDto(
+                    "a"+i,
                     "jinkonu",
                     "1234",
                     "konu",

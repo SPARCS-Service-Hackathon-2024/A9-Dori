@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -72,6 +71,7 @@ class OfferServiceTest {
     private void generateDomains() {
         for (int i = 0; i < 10; i++) {
             researcherService.join(new ResearcherJoinDto(
+                    "a"+i,
                     "jinkonu",
                     "1234",
                     "konu",
@@ -89,6 +89,7 @@ class OfferServiceTest {
             ));
 
             companyService.join(new CompanyJoinDto(
+                    "a"+i,
                     "jinkonu",
                     "1234",
                     "konu",
@@ -98,6 +99,7 @@ class OfferServiceTest {
             ));
 
             studentService.join(new StudentJoinDto(
+                    "a"+i,
                     "jinkonu",
                     "1234",
                     "konu",

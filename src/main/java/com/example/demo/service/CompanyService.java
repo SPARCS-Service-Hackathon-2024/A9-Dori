@@ -38,6 +38,7 @@ public class CompanyService {
                 .requirement(dto.getRequirement())
                 .money(dto.getMoney())
                 .isRewarded(dto.isRewarded())
+                .fromResearcher(false)
                 .company(company)
                 .researcher(researcher)
                 .build();

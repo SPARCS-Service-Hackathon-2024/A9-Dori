@@ -21,14 +21,14 @@ public class OfferService {
     private final ResearcherRepository researcherRepository;
 
     @Transactional
-    public List<CompanyMatchOffer> findCompanyOffers(Long researcherId) {
+    public List<CompanyMatchOffer> findCompanyOffers(String researcherId) {
         Researcher researcher = researcherRepository.findById(researcherId).get();
 
         return companyMatchOfferRepository.findByResearcher(researcher);
     }
 
     @Transactional
-    public List<StudentMatchOffer> findStudentOffers(Long researcherId) {
+    public List<StudentMatchOffer> findStudentOffers(String researcherId) {
         Researcher researcher = researcherRepository.findById(researcherId).get();
 
         return studentMatchOfferRepository.findByResearcher(researcher);
