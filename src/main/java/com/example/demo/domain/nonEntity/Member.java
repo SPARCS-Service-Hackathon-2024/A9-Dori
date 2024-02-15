@@ -10,7 +10,6 @@ public class Member extends BaseEntity {
 
     private String loginId;
     private String password;
-    private String memberAuth;
 
     public void join(String loginId, String password) {
         setLoginId(loginId);
