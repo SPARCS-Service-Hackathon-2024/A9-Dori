@@ -11,6 +11,7 @@ const Header = () => (
         height: "40px",
         width: "100%",
         background: "#FFFFFF",
+        zIndex: 50,
       }}
     >
       <AdaptiveCenterDiv
