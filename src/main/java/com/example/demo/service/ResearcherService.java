@@ -4,8 +4,10 @@ import com.example.demo.domain.member.Company;
 import com.example.demo.domain.member.Researcher;
 import com.example.demo.domain.member.Student;
 import com.example.demo.domain.nonEntity.Strength;
+import com.example.demo.repository.CompanyRepository;
 import com.example.demo.repository.ResearcherQueryDslRepository;
 import com.example.demo.repository.ResearcherRepository;
+import com.example.demo.repository.StudentRepository;
 import com.example.demo.utils.dto.ResearcherJoinDto;
 import com.example.demo.utils.dto.ResearcherSearchDto;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +22,8 @@ public class ResearcherService {
 
     private final ResearcherRepository researcherRepository;
     private final ResearcherQueryDslRepository researcherQueryDslRepository;
+    private final CompanyRepository companyRepository;
+    private final StudentRepository studentRepository;
 
     @Transactional
     public Researcher join(ResearcherJoinDto dto) {
@@ -46,12 +50,18 @@ public class ResearcherService {
     }
 
     @Transactional
-    public void matchStudent(Researcher researcher, Student student) {
-        researcher.match(null, student);
+    public void matchCompany(Long researcherId, Long companyId) {
+        Researcher researcher = researcherRepository.findById(researcherId).get();
+        Company company = companyRepository.findById(companyId).get();
+
+        researcher.match(company, null);
     }
 
     @Transactional
-    public void matchCompany(Researcher researcher, Company company) {
-        researcher.match(company, null);
+    public void matchStudent(Long researcherId, Long studentId) {
+        Researcher researcher = researcherRepository.findById(researcherId).get();
+        Student student = studentRepository.findById(studentId).get();
+
+        researcher.match(null, student);
     }
 }
