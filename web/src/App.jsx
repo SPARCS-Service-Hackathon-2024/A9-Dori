@@ -15,6 +15,7 @@ import Chat from "./pages/Chat";
 import Mypage from "./pages/Mypage";
 import SelectUser from "./pages/SelectUser";
 import ResearcherHere from "./pages/ResearcherHere";
+import ResearcherFind from "./pages/ResearcherFind";
 
 import "./App.css";
 import "./assets/fonts/index.css";
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/mypage" Component={Mypage} />
           <Route path="/selectUser" Component={SelectUser} />
           <Route path="/ResearcherHere" Component={ResearcherHere} />
+          <Route path="/ResearcherFind" Component={ResearcherFind} />
         </Routes>
       </Root>
     </BrowserRouter>
