@@ -11,7 +11,8 @@ public class ResearcherSearchDto {
 
     String query;
     Strength strength;
-    boolean isRewarded;
-    boolean forCompany;
-    boolean forStudent;
+    Boolean isRewarded;
+    Boolean forCompany;
+    Boolean forStudent;
+    Boolean isMania;
 }

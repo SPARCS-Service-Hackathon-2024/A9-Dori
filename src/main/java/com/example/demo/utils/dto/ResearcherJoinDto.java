@@ -21,11 +21,11 @@ public class ResearcherJoinDto {
     private String degree;
     private String strength;
     private String capacity;
-    private boolean isWorking;
-    private String position;
-    private boolean isRewarded;
-    private boolean forCompany;
-    private boolean forStudent;
+    private Boolean isWorking;
+    private String role;
+    private Boolean isRewarded;
+    private Boolean forCompany;
+    private Boolean forStudent;
     private Set<String> formerWorkplaces;
 
     public Researcher toEntity() {
@@ -37,7 +37,7 @@ public class ResearcherJoinDto {
                 .strength(Strength.of(strength))
                 .capacity(capacity)
                 .isWorking(isWorking)
-                .role(position)
+                .role(role)
                 .isRewarded(isRewarded)
                 .forCompany(forCompany)
                 .forStudent(forStudent)

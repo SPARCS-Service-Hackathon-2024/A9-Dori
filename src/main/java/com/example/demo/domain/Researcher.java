@@ -34,6 +34,7 @@ public class Researcher extends Member {
     private boolean isRewarded; // 유무상 여부
     private boolean forCompany; // 기업 대상
     private boolean forStudent; // 학생 대상
+    private boolean isMania;    // 도리 매니아
 
     /* 연관 데이터 */
     @OneToMany(mappedBy = "researcher", cascade = CascadeType.ALL, orphanRemoval = true)

@@ -53,7 +53,7 @@ class ResearcherServiceTest {
             researcherService.join(dtos.get(i));
 
         // when
-        List<Researcher> researchers = researcherService.find("konu", true, true, true, Strength.SKILL);
+        List<Researcher> researchers = researcherService.find("konu", null, null, null, Strength.SKILL);
 
         // then
         assertThat(researchers.size()).isEqualTo(10);

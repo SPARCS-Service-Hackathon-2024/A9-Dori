@@ -27,9 +27,9 @@ public class ResearcherService {
     @Transactional
     public List<Researcher> find(
             String query,
-            boolean isRewarded,
-            boolean forCompany,
-            boolean forStudent,
+            Boolean isRewarded,
+            Boolean forCompany,
+            Boolean forStudent,
             Strength strength
     ) {
         ResearcherSearchDto dto = ResearcherSearchDto.builder()
