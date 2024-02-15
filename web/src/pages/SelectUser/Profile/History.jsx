@@ -2,7 +2,7 @@ import { memo } from "react";
 import Container from "../../../components/Container";
 import HashTag from "../../../components/Tag/HashTag";
 
-const History = () => {
+const History = ({ name = "", tags = [] }) => {
   return (
     <Container
       css={{
@@ -39,7 +39,7 @@ const History = () => {
           textAlign: "center",
         }}
       >
-        포스코인터내셔널
+        {name}
       </div>
       <div
         css={{
@@ -50,8 +50,9 @@ const History = () => {
           gap: "8px",
         }}
       >
-        <HashTag name="기업" />
-        <HashTag name="유샹" />
+        {tags.map((tag) => (
+          <HashTag name={tag} />
+        ))}
       </div>
       <div
         css={{

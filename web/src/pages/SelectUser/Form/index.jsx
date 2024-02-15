@@ -8,8 +8,12 @@ import Header from "../Header";
 import CheckBoxWithLabel from "../../../components/Form/CheckBoxWithLabel";
 import InputFormText from "./InputFormText";
 import FormLabel from "../../../components/Form/FormLabel";
+import userInfoAtom from "../../../atoms/userInfo";
+import { useRecoilValue } from "recoil";
 
 const Form = ({ onNext, onBack }) => {
+  const { type, name } = useRecoilValue(userInfoAtom);
+
   const [isTech, setIsTech] = useState(false);
   const [isRecruit, setIsRecruit] = useState(false);
   const [isConsult, setIsConsult] = useState(false);
@@ -28,9 +32,13 @@ const Form = ({ onNext, onBack }) => {
             marginBottom: "8px",
           }}
         >
-          기업명
+          {type === "company"
+            ? "기업명"
+            : type === "researcher"
+            ? "연구원명"
+            : "학생명"}
         </FormLabel>
-        <Container css={{ padding: "16px" }}>롯데정밀화학</Container>
+        <Container css={{ padding: "16px" }}>{name}</Container>
         <FormLabel
           css={{
             marginTop: "16px",
