@@ -38,6 +38,7 @@ public class StudentService {
                 .contactReason(dto.getContactReason())
                 .requirement(dto.getRequirement())
                 .money(dto.getMoney())
+                .isRewarded(dto.isRewarded())
                 .student(student)
                 .researcher(researcher)
                 .build();

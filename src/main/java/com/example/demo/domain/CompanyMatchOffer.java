@@ -22,6 +22,7 @@ public class CompanyMatchOffer {
     private String name;
     private String contactReason;
     private String requirement;
+    private String money;
     private boolean isRewarded;
 
     @ManyToOne

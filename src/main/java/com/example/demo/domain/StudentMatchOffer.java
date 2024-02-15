@@ -24,6 +24,7 @@ public class StudentMatchOffer {
     private String contactReason;
     private String requirement;
     private String money;
+    private boolean isRewarded;
 
     @ManyToOne
     @JoinColumn(name = "student_id")

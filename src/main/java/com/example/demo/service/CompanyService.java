@@ -36,6 +36,7 @@ public class CompanyService {
                 .name(company.getName())
                 .contactReason(dto.getContactReason())
                 .requirement(dto.getRequirement())
+                .money(dto.getMoney())
                 .isRewarded(dto.isRewarded())
                 .company(company)
                 .researcher(researcher)
