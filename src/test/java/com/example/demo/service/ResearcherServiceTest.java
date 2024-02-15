@@ -49,12 +49,14 @@ class ResearcherServiceTest {
     @Test
     public void find() throws Exception {
         // given
+        for (int i = 0; i < 10; i++)
+            researcherService.join(dtos.get(i));
 
         // when
         List<Researcher> researchers = researcherService.find("konu", true, true, true, Strength.SKILL);
 
         // then
-        System.out.println("researchers = " + researchers);
+        assertThat(researchers.size()).isEqualTo(10);
     }
 
     private void generateDto() {

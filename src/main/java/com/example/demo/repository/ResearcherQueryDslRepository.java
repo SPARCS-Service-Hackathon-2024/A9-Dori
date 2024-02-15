@@ -26,11 +26,11 @@ public class ResearcherQueryDslRepository {
                 .select(researcher)
                 .from(researcher)
                 .where(nameContains(dto.getQuery())
-                        .and(capacityContains(dto.getQuery()))
+                        .or(capacityContains(dto.getQuery()))
                         .and(strengthEq(dto.getStrength()))
-                        .and(researcher.isRewarded.eq(dto.isRewarded())))
-//                        .and(researcher.forCompany.eq(dto.isForCompany()))
-//                        .and(researcher.forStudent.eq(dto.isForStudent())))
+                        .and(researcher.isRewarded.eq(dto.isRewarded()))
+                        .and(researcher.forCompany.eq(dto.isForCompany()))
+                        .and(researcher.forStudent.eq(dto.isForStudent())))
                 .fetch();
     }
 
