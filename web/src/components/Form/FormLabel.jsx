@@ -1,4 +1,4 @@
-const Title = ({ children, ...divProps }) => (
+const FormLabel = ({ children, ...divProps }) => (
   <div
     css={{
       fontSize: "14px",
@@ -12,4 +12,4 @@ const Title = ({ children, ...divProps }) => (
   </div>
 );
 
-export default Title;
+export default FormLabel;
