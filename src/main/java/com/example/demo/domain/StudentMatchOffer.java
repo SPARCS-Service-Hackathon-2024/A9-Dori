@@ -23,6 +23,7 @@ public class StudentMatchOffer {
     private String school;
     private String contactReason;
     private String requirement;
+    private String money;
 
     @ManyToOne
     @JoinColumn(name = "student_id")

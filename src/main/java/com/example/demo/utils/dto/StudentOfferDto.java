@@ -9,6 +9,7 @@ public class StudentOfferDto {
 
     private String contactReason;
     private String requirement;
+    private String money;
 
     private Long studentId;
     private Long researcherId;
