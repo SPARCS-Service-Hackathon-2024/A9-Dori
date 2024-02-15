@@ -1,6 +1,5 @@
 package com.example.demo.domain.member;
 
-import com.example.demo.domain.FormerWorkplace;
 import com.example.demo.domain.nonEntity.*;
 import jakarta.persistence.*;
 import lombok.*;
@@ -31,18 +30,15 @@ public class Researcher extends Member {
     private String capacity;    // 역량
     private String role;        // 직책
     private String introduce;   // 소개말
-    private boolean isWorking;  // 재직 여부
+    private String workplace;
     private Long matchNumber;   // 매칭 횟수
+    private boolean isWorking;  // 재직 여부
     private boolean isRewarded; // 유무상 여부
     private boolean forCompany; // 기업 대상
     private boolean forStudent; // 학생 대상
     private boolean isMania;    // 도리 매니아
 
     /* 연관 데이터 */
-    @OneToMany(mappedBy = "researcher", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Builder.Default
-    private List<FormerWorkplace> formerWorkplaces = new ArrayList<>(); // 이전 직장
-
     @ManyToMany(mappedBy = "researchers")
     @Builder.Default
     private List<Student> students = new ArrayList<>();                 // 학생

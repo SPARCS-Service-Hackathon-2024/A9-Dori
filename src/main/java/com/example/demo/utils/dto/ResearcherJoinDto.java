@@ -1,6 +1,6 @@
 package com.example.demo.utils.dto;
 
-import com.example.demo.domain.FormerWorkplace;
+import com.example.demo.utils.deprecated.FormerWorkplace;
 import com.example.demo.domain.member.Researcher;
 import com.example.demo.domain.nonEntity.Strength;
 import com.example.demo.domain.nonEntity.Degree;
@@ -21,12 +21,12 @@ public class ResearcherJoinDto {
     private String degree;
     private String strength;
     private String capacity;
-    private Boolean isWorking;
     private String role;
+    private String workplace;
+    private Boolean isWorking;
     private Boolean isRewarded;
     private Boolean forCompany;
     private Boolean forStudent;
-    private Set<String> formerWorkplaces;
 
     public Researcher toEntity() {
         Researcher researcher = Researcher.builder()
@@ -41,7 +41,7 @@ public class ResearcherJoinDto {
                 .isRewarded(isRewarded)
                 .forCompany(forCompany)
                 .forStudent(forStudent)
-                .formerWorkplaces(FormerWorkplace.of(formerWorkplaces))
+                .workplace(workplace)
                 .build();
         researcher.join(loginId, password);
 
