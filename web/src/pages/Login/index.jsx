@@ -23,6 +23,26 @@ const Login = () => {
             }}
           />
         </div>
+        <div
+          css={{
+            display: "flex",
+            justifyContent: "center",
+            fontSize: "20px",
+            fontWeight: 400,
+            color: "#98A2B3",
+            alignItems: "end",
+            marginTop: "4px",
+          }}
+        >
+          <span css={{ fontWeight: 700, color: "#717BBC", fontSize: "24px" }}>
+            도
+          </span>
+          <span css={{ marginRight: "7px" }}>와줘</span>
+          <span css={{ fontWeight: 700, color: "#717BBC", fontSize: "24px" }}>
+            리
+          </span>
+          <span>서치</span>
+        </div>
       </AdaptiveCenterDiv>
       <Footer />
       <AdaptiveBottom>

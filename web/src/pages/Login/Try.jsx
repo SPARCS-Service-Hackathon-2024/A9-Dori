@@ -41,7 +41,7 @@ const Try = () => {
             src={iconLogo}
             alt="dori"
             css={{
-              width: "min(180px, calc(100% - 60px))",
+              width: "min(140px, calc(100% - 100px))",
             }}
           />
         </div>
