@@ -6,6 +6,7 @@ import HotResearcher from "./HotResearcher";
 
 import iconLogo from "../../assets/iconLogo.svg";
 import iconSetting from "./iconSetting.svg";
+import SectionTop from "./SectionTop";
 
 const hotResearcherDummys = [{}, {}, {}, {}, {}];
 const hotResearchers = [
@@ -70,7 +71,7 @@ const Main = () => {
             padding: "16px 0",
           }}
         >
-          <div css={{ margin: "0 -12px" }}>content</div>
+          <SectionTop />
         </AdaptiveCenterDiv>
       </div>
       <div css={{ height: "12px" }} />

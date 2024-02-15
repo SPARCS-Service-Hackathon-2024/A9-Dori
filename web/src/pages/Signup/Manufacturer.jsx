@@ -2,9 +2,9 @@ import { memo } from "react";
 import useBackgroundColorEffect from "../../hooks/useBackgroundColorEffect";
 import BodySignup from "./BodySignup";
 
-const Researcher = () => {
+const Manufacturer = () => {
   useBackgroundColorEffect();
   return <BodySignup></BodySignup>;
 };
 
-export default memo(Researcher);
+export default memo(Manufacturer);
