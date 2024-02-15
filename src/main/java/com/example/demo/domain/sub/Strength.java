@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.example.demo.domain.sub;
 
 public enum Strength {
     SKILL("스킬"),

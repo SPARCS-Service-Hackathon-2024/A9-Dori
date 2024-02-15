@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Researcher;
-import com.example.demo.domain.Strength;
+import com.example.demo.domain.sub.Strength;
 import com.example.demo.repository.ResearcherQueryDslRepository;
 import com.example.demo.repository.ResearcherRepository;
 import com.example.demo.utils.dto.ResearcherJoinDto;

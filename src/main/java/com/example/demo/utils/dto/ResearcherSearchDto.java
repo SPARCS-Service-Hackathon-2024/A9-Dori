@@ -1,6 +1,6 @@
 package com.example.demo.utils.dto;
 
-import com.example.demo.domain.Strength;
+import com.example.demo.domain.sub.Strength;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

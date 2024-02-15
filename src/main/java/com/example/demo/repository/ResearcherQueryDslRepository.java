@@ -1,7 +1,7 @@
 package com.example.demo.repository;
 
 import com.example.demo.domain.Researcher;
-import com.example.demo.domain.Strength;
+import com.example.demo.domain.sub.Strength;
 import com.example.demo.utils.dto.ResearcherSearchDto;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -20,6 +20,7 @@ public class ResearcherQueryDslRepository {
 
     private final JPAQueryFactory queryFactory;
 
+
     public List<Researcher> search(ResearcherSearchDto dto) {
         return queryFactory
                 .select(researcher)
@@ -27,9 +28,9 @@ public class ResearcherQueryDslRepository {
                 .where(nameContains(dto.getQuery())
                         .and(capacityContains(dto.getQuery()))
                         .and(strengthEq(dto.getStrength()))
-                        .and(researcher.isRewarded.eq(dto.isRewarded()))
-                        .and(researcher.forCompany.eq(dto.isForCompany()))
-                        .and(researcher.forStudent.eq(dto.isForStudent())))
+                        .and(researcher.isRewarded.eq(dto.isRewarded())))
+//                        .and(researcher.forCompany.eq(dto.isForCompany()))
+//                        .and(researcher.forStudent.eq(dto.isForStudent())))
                 .fetch();
     }
 

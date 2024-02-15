@@ -1,23 +1,22 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Researcher;
-import com.example.demo.domain.Strength;
+import com.example.demo.domain.sub.Strength;
 import com.example.demo.utils.dto.ResearcherJoinDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.fail;
 
 @Transactional
 @ExtendWith(SpringExtension.class)
@@ -34,6 +33,7 @@ class ResearcherServiceTest {
         generateDto();
     }
 
+    @Rollback(value = false)
     @Test
     public void join() throws Exception {
         // given
@@ -51,7 +51,7 @@ class ResearcherServiceTest {
         // given
 
         // when
-        List<Researcher> researchers = researcherService.find("jinkonu", false, false, false, Strength.SKILL);
+        List<Researcher> researchers = researcherService.find("konu", true, true, true, Strength.SKILL);
 
         // then
         System.out.println("researchers = " + researchers);
@@ -66,11 +66,13 @@ class ResearcherServiceTest {
                     "지인 소개",
                     "여성",
                     "고졸",
-                    "백엔드 전문",
+                    "스킬",
                     "다 잘함",
                     false,
                     "안녕하세요",
-                    "스킬",
+                    true,
+                    true,
+                    true,
                     Set.of("1", "2")
             ));
         }

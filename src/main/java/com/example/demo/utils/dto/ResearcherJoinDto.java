@@ -2,7 +2,7 @@ package com.example.demo.utils.dto;
 
 import com.example.demo.domain.FormerWorkplace;
 import com.example.demo.domain.Researcher;
-import com.example.demo.domain.Strength;
+import com.example.demo.domain.sub.Strength;
 import com.example.demo.domain.sub.Degree;
 import com.example.demo.domain.sub.Gender;
 import lombok.AllArgsConstructor;
@@ -22,22 +22,28 @@ public class ResearcherJoinDto {
     private String strength;
     private String capacity;
     private boolean isWorking;
-    private String profile;
     private String position;
+    private boolean isRewarded;
+    private boolean forCompany;
+    private boolean forStudent;
     private Set<String> formerWorkplaces;
 
     public Researcher toEntity() {
         Researcher researcher = Researcher.builder()
+                .name(name)
+                .joinReason(joinReason)
                 .gender(Gender.of(gender))
                 .degree(Degree.of(degree))
                 .strength(Strength.of(strength))
                 .capacity(capacity)
                 .isWorking(isWorking)
-                .profile(profile)
-                .position(position)
+                .role(position)
+                .isRewarded(isRewarded)
+                .forCompany(forCompany)
+                .forStudent(forStudent)
                 .formerWorkplaces(FormerWorkplace.of(formerWorkplaces))
                 .build();
-        researcher.join(loginId, password, name, joinReason);
+        researcher.join(loginId, password);
 
         return researcher;
     }

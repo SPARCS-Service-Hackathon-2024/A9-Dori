@@ -18,6 +18,8 @@ public class Student extends Member {
     @Column(name = "student_id")
     private Long id;
 
+    private String name;
+    private String joinReason;
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private String school;
@@ -29,11 +31,4 @@ public class Student extends Member {
             inverseJoinColumns = @JoinColumn(name = "student_id")
     )
     private List<Researcher> researchers = new ArrayList<>();
-
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinTable(
-            joinColumns = @JoinColumn(name = "image_id"),
-            inverseJoinColumns = @JoinColumn(name = "researcher_id")
-    )
-    private List<Image> images = new ArrayList<>();
 }
