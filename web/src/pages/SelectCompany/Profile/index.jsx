@@ -8,10 +8,10 @@ import Bottom from "../Bottom";
 import Header from "../Header";
 import iconDefaultProfile from "./iconDefaultProfile.svg";
 
-const Profile = ({ onNext }) => {
+const Profile = ({ onBack, onNext }) => {
   return (
     <>
-      <Header />
+      <Header onClickBack={onBack} />
       <div
         css={{
           height: "96px",

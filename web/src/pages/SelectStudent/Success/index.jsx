@@ -8,7 +8,7 @@ import background from "./background.svg";
 const Success = () => {
   const navigate = useNavigate();
   const onClick = () => {
-    navigate("/chat");
+    navigate("/home");
   };
 
   const styleText = {

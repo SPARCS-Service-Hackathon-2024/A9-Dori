@@ -19,10 +19,10 @@ const styleAbility = {
   color: "#6172F3",
 };
 
-const Profile = ({ onNext }) => {
+const Profile = ({ onBack, onNext }) => {
   return (
     <>
-      <Header />
+      <Header onClickBack={onBack} />
       <div
         css={{
           height: "96px",
