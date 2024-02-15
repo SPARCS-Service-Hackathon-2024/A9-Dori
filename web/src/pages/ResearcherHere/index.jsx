@@ -1,6 +1,7 @@
 import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
 import Footer from "../../components/Footer";
 import Select from "../../components/Input/Select";
+import LinkBack from "../../components/Link/LinkBack";
 import useBackgroundColorEffect from "../../hooks/useBackgroundColorEffect";
 import ResearchElem from "./ResearchElem";
 
@@ -14,11 +15,13 @@ const ResearcherHere = () => {
       <div css={{ background: "#FFFFFF", padding: "12px 0 13px" }}>
         <AdaptiveCenterDiv>
           <div css={{ display: "flex" }}>
-            <img
-              src={iconBack}
-              alt="back"
-              css={{ width: "48px", height: "48px" }}
-            />
+            <LinkBack>
+              <img
+                src={iconBack}
+                alt="back"
+                css={{ width: "48px", height: "48px" }}
+              />
+            </LinkBack>
             <div
               css={{
                 width: 0,
