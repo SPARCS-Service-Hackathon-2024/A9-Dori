@@ -3,6 +3,8 @@ package com.example.demo.domain.member;
 import com.example.demo.domain.nonEntity.Member;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -10,6 +12,8 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Getter
 @Entity
 public class Company extends Member {
 
@@ -29,8 +33,22 @@ public class Company extends Member {
     private List<Researcher> researchers = new ArrayList<>();
 
     public enum Seek {
-        CONSULTATION,
-        RECRUIT,
-        ETC
+        CONSULTATION("자문"),
+        RECRUIT("채용"),
+        ETC("기타");
+
+        private final String type;
+
+        Seek(String type) {
+            this.type = type;
+        }
+
+        public static Seek of(String type) {
+            for (Seek seek : Seek.values())
+                if (seek.type.equals(type))
+                    return seek;
+
+            return null;
+        }
     }
 }

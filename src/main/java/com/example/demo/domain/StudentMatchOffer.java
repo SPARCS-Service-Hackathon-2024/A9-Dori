@@ -19,6 +19,8 @@ public class StudentMatchOffer {
     @Column(name = "student_match_offer_id")
     private Long id;
 
+    private String name;
+    private String school;
     private String contactReason;
     private String requirement;
 

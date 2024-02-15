@@ -31,6 +31,8 @@ public class StudentService {
         Researcher researcher = researcherRepository.findById(dto.getResearcherId()).get();
 
         StudentMatchOffer offer = StudentMatchOffer.builder()
+                .name(student.getName())
+                .school(student.getSchool())
                 .contactReason(dto.getContactReason())
                 .requirement(dto.getRequirement())
                 .student(student)
