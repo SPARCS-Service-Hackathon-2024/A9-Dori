@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import useBackgroundColorEffect from "../../hooks/useBackgroundColorEffect";
 import Profile from "./Profile";
 import Success from "./Success";
@@ -12,4 +14,4 @@ const SelectUser = () => {
   );
 };
 
-export default SelectUser;
+export default memo(SelectUser);
