@@ -1,4 +1,4 @@
-package com.example.demo.domain.sub;
+package com.example.demo.domain.nonEntity;
 
 public enum Degree {
     MIDDLESCHOOL("중졸"),

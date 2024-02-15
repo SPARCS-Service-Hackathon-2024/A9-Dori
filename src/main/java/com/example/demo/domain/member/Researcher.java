@@ -1,6 +1,7 @@
-package com.example.demo.domain;
+package com.example.demo.domain.member;
 
-import com.example.demo.domain.sub.*;
+import com.example.demo.domain.FormerWorkplace;
+import com.example.demo.domain.nonEntity.*;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -50,8 +51,20 @@ public class Researcher extends Member {
     @JoinColumn(name = "company_id")
     private Company company;                                        // 연구소
 
+
+    /* 도메인 로직 */
     public void join(String loginId, String password) {
         setLoginId(loginId);
         setPassword(password);
+    }
+
+    public void match(Company company, Student student) {
+        if (company != null)
+            this.company = company;
+
+        if (student != null) {
+            this.students.add(student);
+            student.getResearchers().add(this);
+        }
     }
 }

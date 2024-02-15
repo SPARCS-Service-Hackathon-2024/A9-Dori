@@ -1,4 +1,4 @@
-package com.example.demo.domain.sub;
+package com.example.demo.domain.nonEntity;
 
 import com.example.demo.utils.domain.BaseEntity;
 import lombok.*;

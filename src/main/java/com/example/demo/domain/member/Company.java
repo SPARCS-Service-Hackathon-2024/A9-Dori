@@ -1,6 +1,6 @@
-package com.example.demo.domain;
+package com.example.demo.domain.member;
 
-import com.example.demo.domain.sub.Member;
+import com.example.demo.domain.nonEntity.Member;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

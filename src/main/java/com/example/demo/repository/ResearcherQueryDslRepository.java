@@ -1,7 +1,7 @@
 package com.example.demo.repository;
 
-import com.example.demo.domain.Researcher;
-import com.example.demo.domain.sub.Strength;
+import com.example.demo.domain.member.Researcher;
+import com.example.demo.domain.nonEntity.Strength;
 import com.example.demo.utils.dto.ResearcherSearchDto;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;

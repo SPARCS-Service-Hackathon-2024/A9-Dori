@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.domain.Researcher;
-import com.example.demo.domain.sub.Strength;
+import com.example.demo.domain.member.Researcher;
+import com.example.demo.domain.nonEntity.Strength;
 import com.example.demo.utils.dto.ResearcherJoinDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

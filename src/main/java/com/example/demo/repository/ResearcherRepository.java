@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.domain.Researcher;
+import com.example.demo.domain.member.Researcher;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

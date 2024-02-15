@@ -1,4 +1,4 @@
-package com.example.demo.domain.sub;
+package com.example.demo.domain.nonEntity;
 
 public enum Gender {
     WOMAN("여성"),

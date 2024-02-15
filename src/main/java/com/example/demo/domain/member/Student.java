@@ -1,9 +1,10 @@
-package com.example.demo.domain;
+package com.example.demo.domain.member;
 
-import com.example.demo.domain.sub.Gender;
-import com.example.demo.domain.sub.Member;
+import com.example.demo.domain.nonEntity.Gender;
+import com.example.demo.domain.nonEntity.Member;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 @Entity
 public class Student extends Member {
 

@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.domain.Researcher;
-import com.example.demo.domain.sub.Strength;
+import com.example.demo.domain.member.Company;
+import com.example.demo.domain.member.Researcher;
+import com.example.demo.domain.member.Student;
+import com.example.demo.domain.nonEntity.Strength;
 import com.example.demo.repository.ResearcherQueryDslRepository;
 import com.example.demo.repository.ResearcherRepository;
 import com.example.demo.utils.dto.ResearcherJoinDto;
@@ -41,5 +43,15 @@ public class ResearcherService {
                 .build();
 
         return researcherQueryDslRepository.search(dto);
+    }
+
+    @Transactional
+    public void matchStudent(Researcher researcher, Student student) {
+        researcher.match(null, student);
+    }
+
+    @Transactional
+    public void matchCompany(Researcher researcher, Company company) {
+        researcher.match(company, null);
     }
 }

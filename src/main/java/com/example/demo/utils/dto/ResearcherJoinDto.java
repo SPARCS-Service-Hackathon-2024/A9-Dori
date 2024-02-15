@@ -1,10 +1,10 @@
 package com.example.demo.utils.dto;
 
 import com.example.demo.domain.FormerWorkplace;
-import com.example.demo.domain.Researcher;
-import com.example.demo.domain.sub.Strength;
-import com.example.demo.domain.sub.Degree;
-import com.example.demo.domain.sub.Gender;
+import com.example.demo.domain.member.Researcher;
+import com.example.demo.domain.nonEntity.Strength;
+import com.example.demo.domain.nonEntity.Degree;
+import com.example.demo.domain.nonEntity.Gender;
 import lombok.AllArgsConstructor;
 
 import java.util.Set;

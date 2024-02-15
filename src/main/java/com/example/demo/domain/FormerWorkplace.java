@@ -1,6 +1,6 @@
 package com.example.demo.domain;
 
-import com.example.demo.domain.Researcher;
+import com.example.demo.domain.member.Researcher;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
