@@ -11,7 +11,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.List;
 
-import static com.example.demo.domain.QResearcher.researcher;
+import static com.example.demo.domain.member.QResearcher.researcher;
 import static com.querydsl.core.types.dsl.Expressions.TRUE;
 
 @RequiredArgsConstructor
