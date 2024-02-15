@@ -49,6 +49,7 @@ const Navigation = () => {
         left: 0,
         bottom: 0,
         width: "100%",
+        background: "#FFFFFF",
         borderRadius: "24px 24px 0px 0px",
         boxShadow: "0px -2px 20px 0px rgba(0, 0, 0, 0.10)",
         overflow: "hidden",
