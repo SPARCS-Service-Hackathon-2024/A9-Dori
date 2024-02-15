@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 
 import Root from "./components/Root";
+import Login from "./pages/Login";
 import Main from "./pages/Main";
 import Researcher from "./pages/Signup/Researcher";
 import Suggest from "./pages/Suggest";
@@ -18,6 +19,7 @@ const App = () => (
     <BrowserRouter>
       <Root>
         <Routes>
+          <Route path="/login" Component={Login} />
           <Route path="/signup" Component={Researcher} />
           <Route path="/home" Component={Main} />
           <Route path="/suggest" Component={Suggest} />

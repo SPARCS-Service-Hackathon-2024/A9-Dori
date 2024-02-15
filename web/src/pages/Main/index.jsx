@@ -4,7 +4,7 @@ import AdaptiveHorizontalScroll from "../../components/AdaptiveDiv/Adaptivehoriz
 import useBackgroundColorEffect from "../../hooks/useBackgroundColorEffect";
 import HotResearcher from "./HotResearcher";
 
-import iconLogo from "./iconLogo.svg";
+import iconLogo from "../../assets/iconLogo.svg";
 import iconSetting from "./iconSetting.svg";
 
 const hotResearcherDummys = [{}, {}, {}, {}, {}];
