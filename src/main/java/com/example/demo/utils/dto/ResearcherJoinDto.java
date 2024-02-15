@@ -1,15 +1,14 @@
 package com.example.demo.utils.dto;
 
-import com.example.demo.utils.deprecated.FormerWorkplace;
 import com.example.demo.domain.member.Researcher;
 import com.example.demo.domain.nonEntity.Strength;
 import com.example.demo.domain.nonEntity.Degree;
 import com.example.demo.domain.nonEntity.Gender;
 import lombok.AllArgsConstructor;
-
-import java.util.Set;
+import lombok.Getter;
 
 @AllArgsConstructor
+@Getter
 public class ResearcherJoinDto {
 
     private String loginId;

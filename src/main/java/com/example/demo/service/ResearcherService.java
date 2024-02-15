@@ -47,6 +47,11 @@ public class ResearcherService {
     }
 
     @Transactional
+    public Researcher findBy(Long id) {
+        return researcherRepository.findById(id).get();
+    }
+
+    @Transactional
     public List<Researcher> findAll() {
         return researcherRepository.findAll();
     }
