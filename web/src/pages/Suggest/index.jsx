@@ -6,7 +6,7 @@ import Footer from "../../components/Footer";
 
 const Suggest = () => {
   const [selectedCategory, setSelectedCategory] = useState("받은 제안");
-  useBackgroundColorEffect();
+  useBackgroundColorEffect("#F2F4F7");
 
   return (
     <>
