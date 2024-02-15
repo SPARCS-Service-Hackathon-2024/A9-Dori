@@ -2,11 +2,11 @@ import AdaptiveCenterDiv from "../../../components/AdaptiveDiv/AdaptiveCenterDiv
 import AdaptiveHorizontalScroll from "../../../components/AdaptiveDiv/AdaptivehorizontalScroll";
 import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
+import FormLabel from "../../../components/Form/FormLabel";
 import Tag from "../../../components/Tag";
 import HashTag from "../../../components/Tag/HashTag";
 import Bottom from "../Bottom";
 import Header from "../Header";
-import Title from "../Title";
 import History from "./History";
 import iconDefaultProfile from "./iconDefaultProfile.svg";
 
@@ -127,14 +127,14 @@ const Profile = ({ onNext }) => {
             <div css={styleAbility}>보안 기술</div>
           </div>
         </Container>
-        <Title
+        <FormLabel
           css={{
             marginTop: "16px",
             marginBottom: "8px",
           }}
         >
           자기소개/하고 싶은 말
-        </Title>
+        </FormLabel>
         <Container css={{ padding: "16px" }}>
           <div
             css={{
@@ -146,14 +146,14 @@ const Profile = ({ onNext }) => {
             자기 계발은 목표를 설정하고 달성하기 위한 여정입니다.{" "}
           </div>
         </Container>
-        <Title
+        <FormLabel
           css={{
             marginTop: "16px",
             marginBottom: "8px",
           }}
         >
           Dori 활동 내역
-        </Title>
+        </FormLabel>
       </AdaptiveCenterDiv>
       <AdaptiveHorizontalScroll>
         <div css={{ display: "flex", gap: "8px" }}>

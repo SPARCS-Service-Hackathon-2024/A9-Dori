@@ -5,9 +5,9 @@ import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
 import Bottom from "../Bottom";
 import Header from "../Header";
-import Title from "../Title";
 import CheckBoxWithLabel from "./CheckBoxWithLabel";
 import InputFormText from "./InputFormText";
+import FormLabel from "../../../components/Form/FormLabel";
 
 const Form = ({ onNext, onBack }) => {
   const [isTech, setIsTech] = useState(false);
@@ -23,22 +23,22 @@ const Form = ({ onNext, onBack }) => {
       <Header onClickBack={onBack} />
       <div css={{ height: "25px" }} />
       <AdaptiveCenterDiv>
-        <Title
+        <FormLabel
           css={{
             marginBottom: "8px",
           }}
         >
           기업명
-        </Title>
+        </FormLabel>
         <Container css={{ padding: "16px" }}>롯데정밀화학</Container>
-        <Title
+        <FormLabel
           css={{
             marginTop: "16px",
             marginBottom: "8px",
           }}
         >
           컨택 목적
-        </Title>
+        </FormLabel>
         <Container css={{ padding: "16px" }}>
           <div css={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
             <CheckBoxWithLabel
@@ -81,14 +81,14 @@ const Form = ({ onNext, onBack }) => {
             css={{ marginTop: "4px", width: "100%" }}
           />
         </Container>
-        <Title
+        <FormLabel
           css={{
             marginTop: "16px",
             marginBottom: "8px",
           }}
         >
           지불 용의 금액
-        </Title>
+        </FormLabel>
         <Container css={{ padding: "16px" }}>
           <div
             css={{
@@ -114,14 +114,14 @@ const Form = ({ onNext, onBack }) => {
             </div>
           </div>
         </Container>
-        <Title
+        <FormLabel
           css={{
             marginTop: "16px",
             marginBottom: "8px",
           }}
         >
           세부 요청 내역
-        </Title>
+        </FormLabel>
         <Container css={{ padding: "16px", position: "relative" }}>
           <textarea
             value={valueDetail}
