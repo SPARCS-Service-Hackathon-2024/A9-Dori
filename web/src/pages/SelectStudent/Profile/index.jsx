@@ -29,7 +29,7 @@ const Profile = ({ onNext }) => {
               flexWrap: "wrap",
             }}
           >
-            <Tag type="dori" />
+            {/* <Tag type="dori" /> */}
           </div>
         </AdaptiveCenterDiv>
         <div
@@ -68,18 +68,29 @@ const Profile = ({ onNext }) => {
               color: "#344054",
             }}
           >
-            퍼스트 솔라
+            이영섭
           </div>
           <div
             css={{
               marginTop: "8px",
               fontSize: "14px",
               lineHeight: "20px",
-              fontWeight: 600,
+              fontWeight: 700,
               color: "#667085",
             }}
           >
-            고효율의 태양광 패널을 생산하기 위한 제조 기술 개발이 필요합니다.
+            서울대학교
+          </div>
+          <div
+            css={{
+              marginTop: "4px",
+              fontSize: "14px",
+              lineHeight: "20px",
+              fontWeight: 600,
+              color: "#98A2B3",
+            }}
+          >
+            연구원이 되는 것에 관심이 있어 멘토링을 신청하고 싶습니다.
           </div>
           <div
             css={{
@@ -89,7 +100,7 @@ const Profile = ({ onNext }) => {
               gap: "8px",
             }}
           >
-            <HashTag name="자문" />
+            <HashTag name="멘토링" />
             <HashTag name="유상" />
           </div>
         </Container>
@@ -128,15 +139,14 @@ const Profile = ({ onNext }) => {
               fontWeight: 600,
             }}
           >
-            자사 태양광 패널 생산의 효율성을 높이고자 기술력을 동원할
-            생각입니다. 태양 에너지를 전기로 변환하는 과정에서 효율성과 내구성을
-            높이는 것이 중요합니다. 이와 관련하여 뛰어난 역량을 갖고 계신 분을
-            찾습니다.
+            서울대학교 화학생명공학부 재학 중인 24세 이영섭이라고 합니다. 대학원
+            진학을 고민 중인데 프로필을 보고 저의 관심 분야와 밀접한 관련이
+            있으신 것 같아 멘토링을 요청하고자 이렇게 연락드립니다.
           </div>
         </Container>
       </AdaptiveCenterDiv>
       <Footer />
-      <Bottom text="이 기업 선택하기" onClickButton={onNext} />
+      <Bottom text="이 학생 선택하기" onClickButton={onNext} />
     </>
   );
 };

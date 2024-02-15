@@ -15,6 +15,7 @@ import Chat from "./pages/Chat";
 import Mypage from "./pages/Mypage";
 import SelectUser from "./pages/SelectUser";
 import SelectCompany from "./pages/SelectCompany";
+import SelectStudent from "./pages/SelectStudent";
 import ResearcherHere from "./pages/ResearcherHere";
 import ResearcherFind from "./pages/ResearcherFind";
 import Talk from "./pages/Chat/Talk";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/mypage" Component={Mypage} />
           <Route path="/selectUser" Component={SelectUser} />
           <Route path="/selectCompany" Component={SelectCompany} />
+          <Route path="/selectStudent" Component={SelectStudent} />
           <Route path="/researcherHere" Component={ResearcherHere} />
           <Route path="/researcherFind" Component={ResearcherFind} />
           <Route path="/communicate" Component={Communicate} />
