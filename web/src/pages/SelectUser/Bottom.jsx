@@ -1,7 +1,7 @@
 import Button from "../../components/Button";
 import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
 
-const Bottom = ({ text = "" }) => {
+const Bottom = ({ text = "", onClickButton }) => {
   return (
     <div
       css={{
@@ -17,7 +17,7 @@ const Bottom = ({ text = "" }) => {
           boxSizing: "border-box",
         }}
       >
-        <Button>{text}</Button>
+        <Button onClick={onClickButton}>{text}</Button>
       </AdaptiveCenterDiv>
     </div>
   );
