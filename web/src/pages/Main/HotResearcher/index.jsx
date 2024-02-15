@@ -1,9 +1,13 @@
+import { useMemo } from "react";
 import HashTag from "../../../components/Tag/HashTag";
 import useHoverProps from "../../../hooks/useHoverProps";
 import iconHot from "./iconHot.svg";
+import iconNew from "./iconNew.svg";
+import iconUser from "./iconUser.svg";
 
-const HotResearcher = () => {
+const HotResearcher = ({ name = "", tags = [] }) => {
   const [hoverProps, isHover] = useHoverProps();
+  const state = useMemo(() => (Math.random() < 0.5 ? "hot" : "new"), []);
 
   return (
     <div
@@ -20,7 +24,11 @@ const HotResearcher = () => {
     >
       <div css={{ height: "24px" }} />
       <div css={{ display: "flex", justifyContent: "center" }}>
-        <img src={iconHot} alt="hot" css={{ height: "22px" }} />
+        <img
+          src={state === "hot" ? iconHot : iconNew}
+          alt={state}
+          css={{ height: "22px" }}
+        />
       </div>
       <div
         css={{ display: "flex", justifyContent: "center", marginTop: "4px" }}
@@ -44,8 +52,17 @@ const HotResearcher = () => {
               height: "56px",
               background: "#F9F5FF",
               borderRadius: "50%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-          ></div>
+          >
+            <img
+              src={iconUser}
+              alt="profile"
+              css={{ width: "28px", height: "28px" }}
+            />
+          </div>
         </div>
       </div>
       <div
@@ -58,7 +75,7 @@ const HotResearcher = () => {
           color: "#344054",
         }}
       >
-        이름
+        {name}
       </div>
       <div
         css={{
@@ -68,8 +85,9 @@ const HotResearcher = () => {
           gap: "8px",
         }}
       >
-        <HashTag name="기업" />
-        <HashTag name="기업" />
+        {tags.map((tag, index) => (
+          <HashTag name={tag} key={index} />
+        ))}
       </div>
     </div>
   );

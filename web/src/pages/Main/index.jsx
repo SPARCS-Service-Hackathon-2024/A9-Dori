@@ -8,7 +8,24 @@ import iconLogo from "../../assets/iconLogo.svg";
 import iconSetting from "./iconSetting.svg";
 import SectionTop from "./SectionTop";
 
-const hotResearcherDummys = [{}, {}, {}, {}, {}];
+const hotResearcherDummys = [
+  {
+    name: "최주원",
+    tags: ["기업", "학생", "유상"],
+  },
+  {
+    name: "김지연",
+    tags: ["기업", "무상"],
+  },
+  {
+    name: "이동훈",
+    tags: ["학생"],
+  },
+  {
+    name: "박수진",
+    tags: ["학생", "유상"],
+  },
+];
 const hotResearchers = [
   ...hotResearcherDummys,
   ...hotResearcherDummys,
@@ -113,8 +130,8 @@ const Main = () => {
               paddingBottom: "16px",
             }}
           >
-            {hotResearchers.map((_, index) => (
-              <HotResearcher key={index} />
+            {hotResearchers.map(({ name, tags }, index) => (
+              <HotResearcher key={index} name={name} tags={tags} />
             ))}
           </div>
         </AdaptiveHorizontalScroll>
