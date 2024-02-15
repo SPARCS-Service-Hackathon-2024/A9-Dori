@@ -3,6 +3,7 @@ import { RecoilRoot } from "recoil";
 
 import Root from "./components/Root";
 import Login from "./pages/Login";
+import Try from "./pages/Login/Try";
 import Main from "./pages/Main";
 import Signup from "./pages/Signup";
 import Student from "./pages/Signup/Student";
@@ -24,6 +25,7 @@ const App = () => (
       <Root>
         <Routes>
           <Route path="/login" Component={Login} />
+          <Route path="/login/try" Component={Try} />
           <Route path="/signup" Component={Signup} />
           <Route path="/signup/researcher" Component={Researcher} />
           <Route path="/signup/manufacturer" Component={Manufacturer} />

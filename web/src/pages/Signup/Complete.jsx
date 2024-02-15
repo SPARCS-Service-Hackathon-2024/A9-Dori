@@ -3,6 +3,7 @@ import useBackgroundColorEffect from "../../hooks/useBackgroundColorEffect";
 import Footer from "../../components/Footer";
 import AdaptiveBottom from "../../components/AdaptiveDiv/AdaptiveBottom";
 import Button from "../../components/Button";
+import { Link } from "react-router-dom";
 
 const Complete = () => {
   useBackgroundColorEffect();
@@ -12,7 +13,9 @@ const Complete = () => {
       <div css={{ height: "100px" }} />
       <Footer />
       <AdaptiveBottom>
-        <Button>Dori 시작하기</Button>
+        <Link to="/home">
+          <Button>Dori 시작하기</Button>
+        </Link>
       </AdaptiveBottom>
     </>
   );

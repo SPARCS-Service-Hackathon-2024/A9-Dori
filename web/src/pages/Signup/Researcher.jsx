@@ -84,15 +84,6 @@ const Researcher = () => {
             marginBottom: "8px",
           }}
         >
-          이메일
-        </FormLabel>
-        <FormInputText value={valueEmail} onChangeValue={setValueEmail} />
-        <FormLabel
-          css={{
-            marginTop: "16px",
-            marginBottom: "8px",
-          }}
-        >
           이름
         </FormLabel>
         <FormInputText value={valueName} onChangeValue={setValueName} />
@@ -131,6 +122,15 @@ const Researcher = () => {
             onChangeValue={() => setValueGender("female")}
           />
         </Container>
+        <FormLabel
+          css={{
+            marginTop: "16px",
+            marginBottom: "8px",
+          }}
+        >
+          이메일 주소
+        </FormLabel>
+        <FormInputText value={valueEmail} onChangeValue={setValueEmail} />
         <FormLabel
           css={{
             marginTop: "16px",

@@ -63,7 +63,7 @@ const Navigation = () => {
         }}
       >
         <Button Icon={IconHome} name="홈" to="/home" />
-        <Button Icon={IconInbox} name="받은 제안" to="/suggest" />
+        <Button Icon={IconInbox} name="제안 목록" to="/suggest" />
         <Button Icon={IconChat} name="채팅" to="/chat" />
         <Button Icon={IconMe} name="마이페이지" to="/mypage" />
       </AdaptiveCenterDiv>
