@@ -1,7 +1,7 @@
 package com.example.demo.domain;
 
+import com.example.demo.domain.member.Company;
 import com.example.demo.domain.member.Researcher;
-import com.example.demo.domain.member.Student;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,7 +19,7 @@ public class CompanyMatchOffer {
 
     @ManyToOne
     @JoinColumn(name = "company_id")
-    private Student student;
+    private Company company;
 
     @ManyToOne
     @JoinColumn(name = "researcher_id")
