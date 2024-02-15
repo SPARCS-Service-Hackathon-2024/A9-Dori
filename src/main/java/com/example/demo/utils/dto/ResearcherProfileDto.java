@@ -2,10 +2,8 @@ package com.example.demo.utils.dto;
 
 import com.example.demo.domain.member.Company;
 import com.example.demo.domain.member.Researcher;
-import com.example.demo.domain.member.Student;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,6 +18,7 @@ public class ResearcherProfileDto {
     private String capacity;
     private String introduce;
     private boolean isRewarded;
+    private boolean istWorking;
     private boolean forCompany;
     private boolean forStudent;
     private boolean isMania;
@@ -64,6 +63,7 @@ public class ResearcherProfileDto {
                 .capacity(researcher.getCapacity())
                 .introduce(researcher.getIntroduce())
                 .isRewarded(researcher.isRewarded())
+                .istWorking(researcher.isWorking())
                 .forCompany(researcher.isForCompany())
                 .forStudent(researcher.isForStudent())
                 .isMania(researcher.isMania())
