@@ -4,6 +4,8 @@ import useBackgroundColorEffect from "../../hooks/useBackgroundColorEffect";
 import Category from "./Category";
 import Footer from "../../components/Footer";
 
+import imgExample from "./imgExample.png";
+
 const Suggest = () => {
   const [selectedCategory, setSelectedCategory] = useState("받은 제안");
   useBackgroundColorEffect("#F2F4F7");
@@ -35,6 +37,11 @@ const Suggest = () => {
         </AdaptiveCenterDiv>
       </div>
       <div css={{ height: "2px" }} />
+      <AdaptiveCenterDiv>
+        {selectedCategory === "받은 제안" && (
+          <img src={imgExample} alt="" css={{ width: "100%" }} />
+        )}
+      </AdaptiveCenterDiv>
       <Footer />
     </>
   );
