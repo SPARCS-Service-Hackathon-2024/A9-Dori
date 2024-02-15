@@ -36,10 +36,4 @@ public class Student extends Member {
             inverseJoinColumns = @JoinColumn(name = "student_id")
     )
     private List<Researcher> researchers = new ArrayList<>();    // 오퍼만 넣은 연구자
-
-
-    /* 도메인 로직 */
-    public void offer(Researcher researcher) {
-        this.getResearchers().add(researcher);
-    }
 }
