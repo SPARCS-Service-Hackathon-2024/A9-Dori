@@ -8,8 +8,10 @@ import Suggest from "./pages/Suggest";
 import Chat from "./pages/Chat";
 import Mypage from "./pages/Mypage";
 import SelectUser from "./pages/SelectUser";
+import ResearcherHere from "./pages/ResearcherHere";
 
 import "./App.css";
+import "./assets/fonts/index.css";
 
 const App = () => (
   <RecoilRoot>
@@ -22,6 +24,7 @@ const App = () => (
           <Route path="/chat" Component={Chat} />
           <Route path="/mypage" Component={Mypage} />
           <Route path="/selectUser" Component={SelectUser} />
+          <Route path="/ResearcherHere" Component={ResearcherHere} />
         </Routes>
       </Root>
     </BrowserRouter>

@@ -7,7 +7,7 @@ import background from "./background.svg";
 const Success = () => {
   const styleText = {
     fontSize: "28px",
-    fontWeight: "bold",
+    fontWeight: 700,
     color: "#344054",
   };
   return (
@@ -33,7 +33,7 @@ const Success = () => {
           css={{
             textAlign: "center",
             fontSize: "16px",
-            fontWeight: "bold",
+            fontWeight: 700,
             color: "#98A2B3",
           }}
         >
