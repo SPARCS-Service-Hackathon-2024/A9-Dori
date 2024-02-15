@@ -17,15 +17,15 @@ public class ResearcherController {
     private final ResearcherService researcherService;
 
 
+    @PostMapping("/join")
+    public void join(@RequestBody ResearcherJoinDto dto) {
+        researcherService.join(dto);
+    }
+
     @GetMapping("/{id}")
     public ResearcherProfileDto profile(@PathVariable Long id) {
         Researcher researcher = researcherService.findBy(id);
 
         return ResearcherProfileDto.of(researcher);
-    }
-
-    @PostMapping("/join")
-    public void join(@RequestBody ResearcherJoinDto dto) {
-        researcherService.join(dto);
     }
 }

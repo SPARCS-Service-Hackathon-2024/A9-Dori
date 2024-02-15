@@ -27,7 +27,7 @@ public class ResearcherQueryDslRepository {
                 .from(researcher)
                 .where(nameContains(dto.getQuery())
                         .or(capacityContains(dto.getQuery()))
-                        .and(strengthEq(dto.getStrength()))
+                        .and(strengthEq(Strength.of(dto.getStrength())))
                         .and(BooleanEq(dto.getIsRewarded()))
                         .and(BooleanEq(dto.getForCompany()))
                         .and(BooleanEq(dto.getForStudent()))
@@ -44,7 +44,7 @@ public class ResearcherQueryDslRepository {
     }
 
     private BooleanExpression strengthEq(Strength strength) {
-        return researcher.strength.eq(strength);
+        return strength == null ? TRUE : researcher.strength.eq(strength);
     }
 
     private BooleanExpression BooleanEq(Boolean value) {

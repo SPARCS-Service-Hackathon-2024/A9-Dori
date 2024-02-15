@@ -3,7 +3,6 @@ package com.example.demo.service;
 import com.example.demo.domain.member.Company;
 import com.example.demo.domain.member.Researcher;
 import com.example.demo.domain.member.Student;
-import com.example.demo.domain.nonEntity.Strength;
 import com.example.demo.repository.*;
 import com.example.demo.utils.dto.ResearcherJoinDto;
 import com.example.demo.utils.dto.ResearcherSearchDto;
@@ -28,21 +27,7 @@ public class ResearcherService {
     }
 
     @Transactional
-    public List<Researcher> find(
-            String query,
-            Boolean isRewarded,
-            Boolean forCompany,
-            Boolean forStudent,
-            Strength strength
-    ) {
-        ResearcherSearchDto dto = ResearcherSearchDto.builder()
-                .query(query)
-                .isRewarded(isRewarded)
-                .forCompany(forCompany)
-                .forStudent(forStudent)
-                .strength(strength)
-                .build();
-
+    public List<Researcher> search(ResearcherSearchDto dto) {
         return researcherQueryDslRepository.search(dto);
     }
 

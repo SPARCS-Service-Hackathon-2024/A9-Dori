@@ -31,7 +31,7 @@ public class Researcher extends Member {
     private String role;        // 직책
     private String introduce;   // 소개말
     private String workplace;
-    private Long matchNumber;   // 매칭 횟수
+    private long matchNumber;   // 매칭 횟수
     private boolean isWorking;  // 재직 여부
     private boolean isRewarded; // 유무상 여부
     private boolean forCompany; // 기업 대상

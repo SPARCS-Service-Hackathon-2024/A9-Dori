@@ -80,12 +80,12 @@ class OfferServiceTest {
                     "고졸",
                     "스킬",
                     "다 잘함",
-                    false,
+                    "hi",
                     "안녕하세요",
                     true,
                     true,
                     true,
-                    Set.of("1", "2")
+                    false
             ));
 
             companyService.join(new CompanyJoinDto(

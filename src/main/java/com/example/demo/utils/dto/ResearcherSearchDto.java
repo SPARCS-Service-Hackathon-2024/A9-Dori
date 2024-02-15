@@ -1,6 +1,5 @@
 package com.example.demo.utils.dto;
 
-import com.example.demo.domain.nonEntity.Strength;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +9,7 @@ import lombok.Setter;
 public class ResearcherSearchDto {
 
     String query;
-    Strength strength;
+    String strength;
     Boolean isRewarded;
     Boolean forCompany;
     Boolean forStudent;

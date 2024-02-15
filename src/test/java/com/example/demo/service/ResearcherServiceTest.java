@@ -6,6 +6,7 @@ import com.example.demo.domain.member.Student;
 import com.example.demo.domain.nonEntity.Strength;
 import com.example.demo.utils.dto.CompanyJoinDto;
 import com.example.demo.utils.dto.ResearcherJoinDto;
+import com.example.demo.utils.dto.ResearcherSearchDto;
 import com.example.demo.utils.dto.StudentJoinDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -65,7 +66,13 @@ class ResearcherServiceTest {
             researcherService.join(researcherDtos.get(i));
 
         // when
-        List<Researcher> researchers = researcherService.find("konu", null, null, null, Strength.SKILL);
+        List<Researcher> researchers = researcherService.search(
+                ResearcherSearchDto.builder()
+                        .query("konu")
+                        .isRewarded(true)
+                        .forCompany(true)
+                        .build()
+        );
 
         // then
         assertThat(researchers.size()).isEqualTo(10);
@@ -115,12 +122,12 @@ class ResearcherServiceTest {
                     "고졸",
                     "스킬",
                     "다 잘함",
-                    false,
+                    "국장",
                     "안녕하세요",
                     true,
                     true,
                     true,
-                    Set.of("1", "2")
+                    true
             ));
 
             companyDtos.add(new CompanyJoinDto(
