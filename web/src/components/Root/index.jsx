@@ -5,7 +5,8 @@ import Navigation from "./Navigation";
 const Root = ({ children }) => {
   const { pathname } = useLocation();
 
-  const isDisplayNavigation = !pathname.includes("/selectUser");
+  const isDisplayNavigation =
+    !pathname.includes("/selectUser") && !pathname.includes("/login");
 
   return (
     <div
