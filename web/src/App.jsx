@@ -4,6 +4,7 @@ import { RecoilRoot } from "recoil";
 import Root from "./components/Root";
 import Login from "./pages/Login";
 import Main from "./pages/Main";
+import Signup from "./pages/Signup";
 import Researcher from "./pages/Signup/Researcher";
 import Suggest from "./pages/Suggest";
 import Chat from "./pages/Chat";
@@ -20,7 +21,8 @@ const App = () => (
       <Root>
         <Routes>
           <Route path="/login" Component={Login} />
-          <Route path="/signup" Component={Researcher} />
+          <Route path="/signup" Component={Signup} />
+          <Route path="/signup/researcher" Component={Researcher} />
           <Route path="/home" Component={Main} />
           <Route path="/suggest" Component={Suggest} />
           <Route path="/chat" Component={Chat} />

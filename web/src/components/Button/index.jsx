@@ -13,12 +13,12 @@ const Button = ({ type = "blue", children, ...divProps }) => {
         background:
           type === "border-gray"
             ? isHover
-              ? "#F9FAFB"
+              ? "#F2F4F7"
               : "#FCFCFD"
             : isHover
             ? "#3538CD"
             : "#444CE7",
-        color: "white",
+        color: type === "border-gray" ? "" : "white",
         textAlign: "center",
         transition: "background 0.2s ease-in-out",
         cursor: "pointer",

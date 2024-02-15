@@ -46,8 +46,11 @@ textarea {
   background: none;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
+a,
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
   text-decoration: none;
 }

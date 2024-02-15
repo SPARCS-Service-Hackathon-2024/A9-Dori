@@ -1,9 +1,11 @@
 import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
-import Footer from "../../components/Footer";
 import useBackgroundColorEffect from "../../hooks/useBackgroundColorEffect";
 
 import iconLogo from "../../assets/iconLogo.svg";
 import Button from "../../components/Button";
+import { Link } from "react-router-dom";
+import AdaptiveBottom from "../../components/AdaptiveDiv/AdaptiveBottom";
+import Footer from "../../components/Footer";
 
 const Login = () => {
   useBackgroundColorEffect();
@@ -21,10 +23,10 @@ const Login = () => {
             }}
           />
         </div>
-        <div css={{ height: "max(100px, calc(100vh - 350px))" }} />
-        <div css={{ margin: "0 10px" }}>
-          <Button>로그인</Button>
-        </div>
+      </AdaptiveCenterDiv>
+      <Footer />
+      <AdaptiveBottom>
+        <Button>로그인</Button>
         <div
           css={{
             marginTop: "10px",
@@ -36,19 +38,20 @@ const Login = () => {
           <div css={{ fontSize: "16px", color: "#98A2B3" }}>
             혹은 dori가 처음이세요?
           </div>
-          <div
-            css={{
-              fontSize: "16px",
-              color: "#717BBC",
-              fontWeight: 700,
-              textDecoration: "underline",
-            }}
-          >
-            회원가입
-          </div>
+          <Link to="/signup">
+            <div
+              css={{
+                fontSize: "16px",
+                color: "#717BBC",
+                fontWeight: 700,
+                textDecoration: "underline",
+              }}
+            >
+              회원가입
+            </div>
+          </Link>
         </div>
-      </AdaptiveCenterDiv>
-      <div css={{ height: "50px" }} />
+      </AdaptiveBottom>
     </>
   );
 };

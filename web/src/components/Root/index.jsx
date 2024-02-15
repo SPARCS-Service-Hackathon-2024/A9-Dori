@@ -6,7 +6,9 @@ const Root = ({ children }) => {
   const { pathname } = useLocation();
 
   const isDisplayNavigation =
-    !pathname.includes("/selectUser") && !pathname.includes("/login");
+    !pathname.includes("/selectUser") &&
+    !pathname.includes("/login") &&
+    !pathname.includes("/signup");
 
   return (
     <div
