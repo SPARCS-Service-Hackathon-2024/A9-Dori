@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { css } from "@emotion/react";
 import AdaptiveCenterDiv from "../../../components/AdaptiveDiv/AdaptiveCenterDiv";
 import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
@@ -6,12 +7,16 @@ import Bottom from "../Bottom";
 import Header from "../Header";
 import Title from "../Title";
 import CheckBoxWithLabel from "./CheckBoxWithLabel";
+import InputFormText from "./InputFormText";
 
-const Form = ({ onBack, onNext }) => {
+const Form = ({ onNext, onBack }) => {
   const [isTech, setIsTech] = useState(false);
   const [isRecruit, setIsRecruit] = useState(false);
   const [isConsult, setIsConsult] = useState(false);
   const [isEtc, setIsEtc] = useState(false);
+  const [valuePurpose, setValuePurpose] = useState("");
+  const [valueAmount, setValueAmount] = useState("");
+  const [valueDetail, setValueDetail] = useState("");
 
   return (
     <>
@@ -69,6 +74,12 @@ const Form = ({ onBack, onNext }) => {
             value={isEtc}
             onChangeValue={setIsEtc}
           />
+          <InputFormText
+            placeholder="컨택 목적을 입력하세요"
+            value={valuePurpose}
+            onChangeValue={setValuePurpose}
+            css={{ marginTop: "4px", width: "100%" }}
+          />
         </Container>
         <Title
           css={{
@@ -78,7 +89,31 @@ const Form = ({ onBack, onNext }) => {
         >
           지불 용의 금액
         </Title>
-        <Container css={{ padding: "16px" }}></Container>
+        <Container css={{ padding: "16px" }}>
+          <div
+            css={{
+              display: "flex",
+              gap: "9px",
+              alignItems: "center",
+            }}
+          >
+            <InputFormText
+              placeholder="금액을 입력해주세요"
+              value={valueAmount}
+              onChangeValue={setValueAmount}
+              css={{ width: 0, flexGrow: 1 }}
+            />
+            <div
+              css={{
+                color: "#475467",
+                fontWeight: 600,
+                fontSize: "14px",
+              }}
+            >
+              원
+            </div>
+          </div>
+        </Container>
         <Title
           css={{
             marginTop: "16px",
@@ -87,7 +122,28 @@ const Form = ({ onBack, onNext }) => {
         >
           세부 요청 내역
         </Title>
-        <Container css={{ padding: "16px" }}></Container>
+        <Container css={{ padding: "16px", position: "relative" }}>
+          <textarea
+            value={valueDetail}
+            onChange={(e) => setValueDetail(e.target.value)}
+            placeholder="세부 요청 내역을 입력하세요"
+            css={[
+              {
+                width: "100%",
+                resize: "none",
+                height: "70px",
+                fontSize: "14px",
+                fontWeight: 600,
+                color: "#344054",
+              },
+              css`
+                &::placeholder {
+                  color: #98a2b3;
+                }
+              `,
+            ]}
+          />
+        </Container>
       </AdaptiveCenterDiv>
       <Footer />
       <Bottom text="요청 전송하기" onClickButton={onNext} />

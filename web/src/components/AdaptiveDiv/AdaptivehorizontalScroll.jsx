@@ -1,12 +1,13 @@
 import { css } from "@emotion/react";
 
-const AdaptivehorizontalScroll = ({ children, ...divProps }) => {
+const AdaptiveHorizontalScroll = ({ children, ...divProps }) => {
   return (
     <div
       css={css`
         display: flex;
         position: relative;
         overflow-x: auto;
+        overflow-y: visible;
         -ms-overflow-style: none;
         scrollbar-width: none;
         &::-webkit-scrollbar {
@@ -26,9 +27,4 @@ const AdaptivehorizontalScroll = ({ children, ...divProps }) => {
   );
 };
 
-export default AdaptivehorizontalScroll;
-
-`
-@media (max-width: 788px) {
-  padding: 0 20px;
-}`;
+export default AdaptiveHorizontalScroll;

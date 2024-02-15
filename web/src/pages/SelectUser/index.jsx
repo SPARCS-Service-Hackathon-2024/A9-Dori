@@ -12,7 +12,12 @@ const SelectUser = () => {
   return (
     <>
       {page == "profile" && <Profile onNext={() => setPage("form")} />}
-      {page == "form" && <Form onBack={() => setPage("profile")} />}
+      {page == "form" && (
+        <Form
+          onNext={() => setPage("success")}
+          onBack={() => setPage("profile")}
+        />
+      )}
       {page == "success" && <Success />}
     </>
   );
