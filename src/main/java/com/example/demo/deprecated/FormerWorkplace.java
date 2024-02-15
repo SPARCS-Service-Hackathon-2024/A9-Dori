@@ -1,4 +1,4 @@
-package com.example.demo.utils.deprecated;
+package com.example.demo.deprecated;
 
 import com.example.demo.domain.member.Researcher;
 import jakarta.persistence.*;
