@@ -35,18 +35,11 @@ public class Student extends Member {
             joinColumns = @JoinColumn(name = "researcher_id"),
             inverseJoinColumns = @JoinColumn(name = "student_id")
     )
-    private List<Researcher> pendingResearchers = new ArrayList<>();    // 오퍼만 넣은 연구자
-
-    @ManyToMany
-    @JoinTable(
-            joinColumns = @JoinColumn(name = "researcher_id"),
-            inverseJoinColumns = @JoinColumn(name = "student_id")
-    )
-    private List<Researcher> doneResearchers = new ArrayList<>();       // 매칭된 연구자
+    private List<Researcher> researchers = new ArrayList<>();    // 오퍼만 넣은 연구자
 
 
     /* 도메인 로직 */
     public void offer(Researcher researcher) {
-        this.getPendingResearchers().add(researcher);
+        this.getResearchers().add(researcher);
     }
 }
