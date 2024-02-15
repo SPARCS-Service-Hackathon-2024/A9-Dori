@@ -19,18 +19,19 @@ public class Researcher extends Member {
     private Long id;
 
     /* 비연관 데이터 */
-    private String name;
-    private String joinReason;
     @Enumerated(EnumType.STRING)
     private Gender gender;      // 성별
     @Enumerated(EnumType.STRING)
     private Degree degree;      // 학력
     @Enumerated(EnumType.STRING)
     private Strength strength;  // 강점
+    private String name;        // 이름
+    private String joinReason;  // 가입 이유
     private String capacity;    // 역량
+    private String role;        // 직책
+    private String introduce;   // 소개말
     private boolean isWorking;  // 재직 여부
     private Long matchNumber;   // 매칭 횟수
-    private String role;        // 직책
     private boolean isRewarded; // 유무상 여부
     private boolean forCompany; // 기업 대상
     private boolean forStudent; // 학생 대상

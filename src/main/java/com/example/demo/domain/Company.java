@@ -18,10 +18,11 @@ public class Company extends Member {
     private Long id;
 
     /* 비연관 데이터 */
-    private String name;
-    private String joinReason;
-    private Seek seek;
-    private boolean isMania;
+    private String name;        // 이름
+    private String joinReason;  // 가입 이유
+    private String introduce;   // 소개말
+    private Seek seek;          // 검색 조건
+    private boolean isMania;    // 도리 매니아 여부
 
     /* 연관 데이터 */
     @OneToMany(mappedBy = "company")

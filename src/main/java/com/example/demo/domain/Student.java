@@ -23,6 +23,7 @@ public class Student extends Member {
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private String school;
+    private String introduce;   // 소개말
 
     /* 연관 데이터 */
     @ManyToMany
