@@ -1,5 +1,6 @@
 import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
 import Footer from "../../components/Footer";
+import Select from "../../components/Input/Select";
 import useBackgroundColorEffect from "../../hooks/useBackgroundColorEffect";
 import ResearchElem from "./ResearchElem";
 
@@ -12,7 +13,7 @@ const ResearcherHere = () => {
     <>
       <div css={{ background: "#FFFFFF", padding: "12px 0 13px" }}>
         <AdaptiveCenterDiv>
-          <div css={{ display: "flex", gap: "4px" }}>
+          <div css={{ display: "flex" }}>
             <img
               src={iconBack}
               alt="back"
@@ -51,6 +52,18 @@ const ResearcherHere = () => {
                 }}
               />
             </div>
+          </div>
+          <div
+            css={{
+              marginTop: "12px",
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "8px",
+            }}
+          >
+            <Select value="x" options={[{ value: "x", name: "유/무상" }]} />
+            <Select value="x" options={[{ value: "x", name: "대상" }]} />
+            <Select value="x" options={[{ value: "x", name: "강점" }]} />
           </div>
         </AdaptiveCenterDiv>
       </div>
