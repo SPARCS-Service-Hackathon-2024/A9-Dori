@@ -3,10 +3,7 @@ package com.example.demo.service;
 import com.example.demo.domain.CompanyMatchOffer;
 import com.example.demo.domain.member.Company;
 import com.example.demo.domain.member.Researcher;
-import com.example.demo.utils.dto.CompanyJoinDto;
-import com.example.demo.utils.dto.CompanyOfferDto;
-import com.example.demo.utils.dto.ResearcherJoinDto;
-import com.example.demo.utils.dto.StudentJoinDto;
+import com.example.demo.utils.dto.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -63,7 +60,7 @@ class OfferServiceTest {
 
         // then
         for (int i = 0; i < 10; i++) {
-            List<CompanyMatchOffer> offers = offerService.findFromCompanyOffers(researchers.get(i).getId());
+            List<OfferDto> offers = offerService.findFromCompanyOffers(researchers.get(i).getId());
             assertThat(offers.size()).isEqualTo(1);
         }
     }
