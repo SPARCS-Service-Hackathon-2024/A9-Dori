@@ -1,15 +1,37 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
 
+import userInfoAtom from "../../atoms/userInfo";
 import Navigation from "./Navigation";
+import { useEffect } from "react";
+import { getLoginedUser } from "../../utils/users";
 
 const Root = ({ children }) => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const isDisplayNavigation =
     !pathname.includes("/selectUser") &&
     !pathname.includes("/login") &&
     !pathname.includes("/signup");
 
+  const [userInfo, setUserInfo] = useRecoilState(userInfoAtom);
+  useEffect(() => {
+    const _userInfo = getLoginedUser();
+    if (_userInfo) setUserInfo(_userInfo);
+    else setUserInfo(null);
+  }, []);
+  useEffect(() => {
+    if (
+      userInfo === null &&
+      !pathname.includes("/login") &&
+      !pathname.includes("/signup")
+    ) {
+      navigate("/login");
+    }
+  }, [userInfo, pathname]);
+
+  if (userInfo === undefined) return null;
   return (
     <div
       css={{
