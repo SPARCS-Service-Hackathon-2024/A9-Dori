@@ -30,6 +30,11 @@ const Root = ({ children }) => {
       navigate("/login");
     }
   }, [userInfo, pathname]);
+  useEffect(() => {
+    if (!!userInfo && pathname.includes("/login")) {
+      navigate("/home");
+    }
+  }, [userInfo, pathname]);
 
   if (userInfo === undefined) return null;
   return (

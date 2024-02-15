@@ -26,7 +26,9 @@ const Login = () => {
       </AdaptiveCenterDiv>
       <Footer />
       <AdaptiveBottom>
-        <Button>로그인</Button>
+        <Link to="/login/try">
+          <Button>로그인</Button>
+        </Link>
         <div
           css={{
             marginTop: "10px",
