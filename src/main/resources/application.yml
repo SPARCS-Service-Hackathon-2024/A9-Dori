@@ -1,1 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:mysql://dori.cnkq0cqekzh6.ap-northeast-2.rds.amazonaws.com/dori
+    username: konu
+    password: kurtcobain99
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 100
+    open-in-view: true
 
