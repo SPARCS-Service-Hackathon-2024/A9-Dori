@@ -13,6 +13,7 @@ const Root = ({ children }) => {
   const isDisplayNavigation =
     !pathname.includes("/selectUser") &&
     !pathname.includes("/selectCompany") &&
+    !pathname.includes("/selectStudent") &&
     !pathname.includes("/login") &&
     !pathname.includes("/signup") &&
     !pathname.includes("/chat/talk");

@@ -29,8 +29,8 @@ const Success = () => {
         }}
       >
         <div css={{ display: "flex", gap: "4px", flexWrap: "wrap" }}>
-          <div css={[styleText, { color: "#717BBC" }]}>퍼스트 솔라</div>
-          <div css={styleText}>에</div>
+          <div css={[styleText, { color: "#717BBC" }]}>이영섭</div>
+          <div css={styleText}>학생 분께</div>
         </div>
         <div css={styleText}>전달 완료되었습니다!</div>
       </AdaptiveCenterDiv>
