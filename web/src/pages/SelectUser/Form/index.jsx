@@ -5,7 +5,7 @@ import Container from "../../../components/Container";
 import Footer from "../../../components/Footer";
 import Bottom from "../Bottom";
 import Header from "../Header";
-import CheckBoxWithLabel from "./CheckBoxWithLabel";
+import CheckBoxWithLabel from "../../../components/Form/CheckBoxWithLabel";
 import InputFormText from "./InputFormText";
 import FormLabel from "../../../components/Form/FormLabel";
 

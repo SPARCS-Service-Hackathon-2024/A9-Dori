@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 import Footer from "../../components/Footer";
 import LinkBack from "../../components/Link/LinkBack";
 
-const BodySignup = ({ children }) => {
+const BodySignup = ({ children, onClickNext }) => {
   return (
     <>
       <div css={{ height: "100px" }} />
@@ -39,6 +39,7 @@ const BodySignup = ({ children }) => {
               flexGrow: 1,
               flexShrink: 0,
             }}
+            onClick={onClickNext}
           >
             다음
           </Button>
