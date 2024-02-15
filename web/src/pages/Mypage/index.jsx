@@ -3,6 +3,7 @@ import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
 import { setLoginedUser } from "../../utils/users";
 import { useSetRecoilState } from "recoil";
 import userInfoAtom from "../../atoms/userInfo";
+import Footer from "../../components/Footer";
 
 const Mypage = () => {
   const setUserInfo = useSetRecoilState(userInfoAtom);
@@ -22,6 +23,7 @@ const Mypage = () => {
           로그아웃
         </div>
       </AdaptiveCenterDiv>
+      <Footer />
     </>
   );
 };

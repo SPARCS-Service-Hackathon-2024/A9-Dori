@@ -38,7 +38,7 @@ const Student = () => {
     }
 
     createUser({
-      type: "manufacturer",
+      type: "student",
       email: valueEmail,
       name: valueName,
       gender: valueGender,
