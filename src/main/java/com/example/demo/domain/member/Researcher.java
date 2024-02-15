@@ -53,11 +53,6 @@ public class Researcher extends Member {
 
 
     /* 도메인 로직 */
-    public void join(String loginId, String password) {
-        setLoginId(loginId);
-        setPassword(password);
-    }
-
     public void match(Company company, Student student) {
         if (company != null)
             this.company = company;
