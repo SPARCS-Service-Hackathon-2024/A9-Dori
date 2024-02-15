@@ -43,7 +43,7 @@ public class Researcher extends Member {
     @Builder.Default
     private List<FormerWorkplace> formerWorkplaces = new ArrayList<>();// 이전 직장
 
-    @ManyToMany(mappedBy = "researchers")
+    @ManyToMany(mappedBy = "pendingResearchers")
     @Builder.Default
     private List<Student> students = new ArrayList<>();             // 학생
 
@@ -59,7 +59,7 @@ public class Researcher extends Member {
 
         if (student != null) {
             this.students.add(student);
-            student.getResearchers().add(this);
+            student.getDoneResearchers().add(this);
         }
     }
 }
