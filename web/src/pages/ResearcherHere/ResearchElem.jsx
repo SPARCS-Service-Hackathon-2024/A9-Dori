@@ -18,6 +18,8 @@ const ResearchElem = ({
   name = "최주원",
   companyName = "국방과학 연구소",
   roleName = "본부장",
+  hashs = [],
+  ability = "",
 }) => {
   return (
     <Link to="/selectUser">
@@ -35,9 +37,9 @@ const ResearchElem = ({
               flexWrap: "wrap",
             }}
           >
-            <Tag type="dori" />
-            <Tag type="idea" />
-            <Tag type="tech" />
+            {tags.map((tag) => (
+              <Tag type={tag} />
+            ))}
           </div>
           <div css={{ height: "8px" }} />
           <div css={{ display: "flex", gap: "8px" }}>
@@ -87,7 +89,9 @@ const ResearchElem = ({
                   flexWrap: "wrap",
                 }}
               >
-                <HashTag name="기업" />
+                {hashs.map((hash) => (
+                  <HashTag name={hash} key={hash} />
+                ))}
               </div>
             </div>
             <div
@@ -108,9 +112,7 @@ const ResearchElem = ({
               gap: "8px",
             }}
           >
-            <div css={styleAbility}>무기제작 능력</div>
-            <div css={styleAbility}>전기/전자 석사</div>
-            <div css={styleAbility}>보안 기술</div>
+            <div css={styleAbility}>{ability}</div>
           </div>
         </AdaptiveCenterDiv>
       </div>
