@@ -6,9 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Builder
 @Data
@@ -30,42 +30,37 @@ public class OfferDto {
         STUDENT
     }
 
-    public static List<OfferDto> of(
-            List<CompanyMatchOffer> companyOffers,
-            List<StudentMatchOffer> studentOffers) {
-        List<OfferDto> offers = new ArrayList<>();
+    public static List<OfferDto> ofCompany(List<CompanyMatchOffer> offers) {
+        return offers.stream()
+                .map(offer ->
+                        OfferDto.builder()
+                                .contactReason(offer.getContactReason())
+                                .requirement(offer.getRequirement())
+                                .isRewarded(offer.isRewarded())
+                                .money(offer.getMoney())
+                                .createdAt(offer.getCreatedAt())
+                                .clientId(offer.getCompany().getId())
+                                .researcherId(offer.getResearcher().getId())
+                                .type(Type.COMPANY)
+                                .build())
+                .sorted(Comparator.comparing(OfferDto::getCreatedAt).reversed())
+                .collect(Collectors.toList());
+    }
 
-        offers.addAll(
-                companyOffers.stream()
-                        .map(offer ->
-                                OfferDto.builder()
-                                        .contactReason(offer.getContactReason())
-                                        .requirement(offer.getRequirement())
-                                        .isRewarded(offer.isRewarded())
-                                        .money(offer.getMoney())
-                                        .createdAt(offer.getCreatedAt())
-                                        .clientId(offer.getCompany().getId())
-                                        .researcherId(offer.getResearcher().getId())
-                                        .type(Type.COMPANY)
-                                        .build()).toList()
-        );
-
-        offers.addAll(
-                studentOffers.stream()
-                        .map(offer ->
-                                OfferDto.builder()
-                                        .contactReason(offer.getContactReason())
-                                        .requirement(offer.getRequirement())
-                                        .isRewarded(offer.isRewarded())
-                                        .money(offer.getMoney())
-                                        .createdAt(offer.getCreatedAt())
-                                        .clientId(offer.getStudent().getId())
-                                        .researcherId(offer.getResearcher().getId())
-                                        .type(Type.STUDENT)
-                                        .build()).toList()
-        );
-
-        offers.sort(Comparator.comparing(OfferDto::getCreatedAt).reversed());
-        return offers;
+    public static List<OfferDto> ofStudent(List<StudentMatchOffer> offers) {
+        return offers.stream()
+                .map(offer ->
+                        OfferDto.builder()
+                                .contactReason(offer.getContactReason())
+                                .requirement(offer.getRequirement())
+                                .isRewarded(offer.isRewarded())
+                                .money(offer.getMoney())
+                                .createdAt(offer.getCreatedAt())
+                                .clientId(offer.getStudent().getId())
+                                .researcherId(offer.getResearcher().getId())
+                                .type(Type.STUDENT)
+                                .build())
+                .sorted(Comparator.comparing(OfferDto::getCreatedAt).reversed())
+                .collect(Collectors.toList());
     }
 }

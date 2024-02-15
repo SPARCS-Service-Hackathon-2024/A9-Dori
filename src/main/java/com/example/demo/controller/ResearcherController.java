@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.CompanyMatchOffer;
-import com.example.demo.domain.StudentMatchOffer;
 import com.example.demo.domain.member.Researcher;
 import com.example.demo.service.OfferService;
 import com.example.demo.service.ResearcherService;
@@ -44,12 +42,14 @@ public class ResearcherController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/{id}/offers")
-    public List<OfferDto> offers(@PathVariable String id) {
-        List<CompanyMatchOffer> companyOffers = offerService.findCompanyOffers(id);
-        List<StudentMatchOffer> studentOffers = offerService.findStudentOffers(id);
+    @GetMapping("/{id}/offers/company")
+    public List<OfferDto> offersFromCompany(@PathVariable String id) {
+        return offerService.findFromCompanyOffers(id);
+    }
 
-        return OfferDto.of(companyOffers, studentOffers);
+    @GetMapping("/{id}/offers/student")
+    public List<OfferDto> offersFromStudent(@PathVariable String id) {
+        return offerService.findFromStudentOffers(id);
     }
 
     @PostMapping("/offer/company")

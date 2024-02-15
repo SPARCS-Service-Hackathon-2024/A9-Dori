@@ -63,7 +63,7 @@ class OfferServiceTest {
 
         // then
         for (int i = 0; i < 10; i++) {
-            List<CompanyMatchOffer> offers = offerService.findCompanyOffers(researchers.get(i).getId());
+            List<CompanyMatchOffer> offers = offerService.findFromCompanyOffers(researchers.get(i).getId());
             assertThat(offers.size()).isEqualTo(1);
         }
     }

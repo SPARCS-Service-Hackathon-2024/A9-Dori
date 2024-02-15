@@ -47,6 +47,17 @@ public class CompanyService {
     }
 
     @Transactional
+    public void acceptOffer(Long offerId) {
+        CompanyMatchOffer offer = offerRepository.findById(offerId).get();
+
+        Researcher researcher = researcherRepository.findById(offer.getResearcher().getId()).get();
+        Company company = companyRepository.findById(offer.getCompany().getId()).get();
+
+        researcher.match(company, null);
+        offerRepository.delete(offer);
+    }
+
+    @Transactional
     public List<Company> findAll() {
         return companyRepository.findAll();
     }

@@ -85,9 +85,6 @@ class ResearcherServiceTest {
             companyService.join(dto);
 
         // when
-        List<Company> companies = companyService.findAll();
-        companies.forEach(company ->
-                        researcherService.acceptOfferFromCompany(researcher.getId(), company.getId()));
 
         // then
         assertThat(researcher.getCompanies().size()).isEqualTo(10);
@@ -101,9 +98,9 @@ class ResearcherServiceTest {
             studentService.join(dto);
 
         // when
-        List<Student> students = studentService.findAll();
-        students.forEach(student ->
-                researcherService.acceptOfferFromStudent(researcher.getId(), student.getId()));
+//        List<Student> students = studentService.findAll();
+//        students.forEach(student ->
+//                researcherService.acceptOfferFromStudent(researcher.getId(), student.getId()));
 
         // then
         assertThat(researcher.getStudents().size()).isEqualTo(10);

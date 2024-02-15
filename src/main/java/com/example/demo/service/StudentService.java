@@ -48,6 +48,17 @@ public class StudentService {
     }
 
     @Transactional
+    public void acceptOffer(Long offerId) {
+        StudentMatchOffer offer = offerRepository.findById(offerId).get();
+
+        Researcher researcher = researcherRepository.findById(offer.getResearcher().getId()).get();
+        Student student = studentRepository.findById(offer.getStudent().getId()).get();
+
+        researcher.match(null, student);
+        offerRepository.delete(offer);
+    }
+
+    @Transactional
     public List<Student> findAll() {
         return studentRepository.findAll();
     }
