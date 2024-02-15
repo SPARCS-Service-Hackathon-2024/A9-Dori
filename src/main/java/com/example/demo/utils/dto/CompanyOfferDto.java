@@ -9,6 +9,7 @@ public class CompanyOfferDto {
 
     private String contactReason;
     private String requirement;
+    private boolean isRewarded;
 
     private Long companyId;
     private Long researcherId;

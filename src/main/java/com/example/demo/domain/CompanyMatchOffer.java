@@ -22,6 +22,7 @@ public class CompanyMatchOffer {
     private String name;
     private String contactReason;
     private String requirement;
+    private boolean isRewarded;
 
     @ManyToOne
     @JoinColumn(name = "company_id")
