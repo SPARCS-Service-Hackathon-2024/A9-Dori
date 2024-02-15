@@ -1,4 +1,6 @@
 import { memo, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
 import useBackgroundColorEffect from "../../hooks/useBackgroundColorEffect";
 import BodySignup from "./BodySignup";
 import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
@@ -6,8 +8,12 @@ import FormLabel from "../../components/Form/FormLabel";
 import FormInputText from "../../components/Form/FormInputText";
 import Container from "../../components/Container";
 import CheckBoxWithLabel from "../../components/Form/CheckBoxWithLabel";
+import { createUser, findUser, setLoginedUser } from "../../utils/users";
+import userInfoAtom from "../../atoms/userInfo";
 
 const Researcher = () => {
+  const navigate = useNavigate();
+  const [valueEmail, setValueEmail] = useState("");
   const [valueName, setValueName] = useState("");
   const [valueGender, setValueGender] = useState();
   const [valueCompany, setValueCompany] = useState("");
@@ -27,8 +33,10 @@ const Researcher = () => {
 
   useBackgroundColorEffect();
 
+  const setUserInfo = useSetRecoilState(userInfoAtom);
   const onClickNext = () => {
     if (
+      !valueEmail ||
       !valueName ||
       !valueGender ||
       !valueCompany ||
@@ -39,6 +47,33 @@ const Researcher = () => {
       alert("모든 항목을 입력해주세요");
       return;
     }
+    const user = findUser(valueEmail);
+    if (user) {
+      alert("이미 가입된 이메일입니다");
+      return;
+    }
+
+    createUser({
+      type: "researcher",
+      email: valueEmail,
+      name: valueName,
+      gender: valueGender,
+      company: valueCompany,
+      ability: valueAbility,
+      isRetired: valueIsRetired,
+      purpose: valuePurpose,
+      target: valueTarget,
+      reward: valueReward,
+    });
+    const newUser = findUser(valueEmail);
+    if (!newUser) {
+      alert("오류!");
+      return;
+    }
+    setLoginedUser(newUser);
+    setUserInfo(newUser);
+
+    navigate("/signup/complete");
   };
 
   return (
@@ -46,6 +81,15 @@ const Researcher = () => {
       <AdaptiveCenterDiv>
         <FormLabel
           css={{
+            marginBottom: "8px",
+          }}
+        >
+          이메일
+        </FormLabel>
+        <FormInputText value={valueEmail} onChangeValue={setValueEmail} />
+        <FormLabel
+          css={{
+            marginTop: "16px",
             marginBottom: "8px",
           }}
         >
