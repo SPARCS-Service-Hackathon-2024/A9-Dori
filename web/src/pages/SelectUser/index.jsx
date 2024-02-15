@@ -8,8 +8,8 @@ const SelectUser = () => {
   useBackgroundColorEffect();
   return (
     <>
-      {/* <Profile /> */}
-      <Success />
+      <Profile />
+      {/* <Success /> */}
     </>
   );
 };

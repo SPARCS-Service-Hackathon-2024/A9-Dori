@@ -1,7 +1,16 @@
 import { memo } from "react";
 import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
 import Tag from "../../components/Tag";
-import HashTag from "./HashTag";
+import HashTag from "../../components/Tag/HashTag";
+
+const styleAbility = {
+  flexGrow: 1,
+  width: 0,
+  fontSize: "12px",
+  fontWeight: 700,
+  lineHeight: "20px",
+  color: "#6172F3",
+};
 
 const ResearchElem = ({
   tags = [],
@@ -9,14 +18,6 @@ const ResearchElem = ({
   companyName = "국방과학 연구소",
   roleName = "본부장",
 }) => {
-  const styleAbility = {
-    flexGrow: 1,
-    width: 0,
-    fontSize: "12px",
-    fontWeight: 700,
-    lineHeight: "20px",
-    color: "#6172F3",
-  };
   return (
     <div
       css={{
