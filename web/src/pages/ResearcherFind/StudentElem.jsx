@@ -1,17 +1,16 @@
 import { memo } from "react";
 import AdaptiveCenterDiv from "../../components/AdaptiveDiv/AdaptiveCenterDiv";
-import Tag from "../../components/Tag";
 import HashTag from "../../components/Tag/HashTag";
 import { Link } from "react-router-dom";
 
-const CompanyElem = ({
-  tags = [],
+const StudentElem = ({
   name = "최주원",
+  school = "서울대학교",
   content = "글로벌 시장 진출 전략에 대한 자문을 원합니다. 연락주시길 바랍니다.",
   hashs = [],
 }) => {
   return (
-    <Link to="/selectCompany">
+    <Link to="/selectStudent">
       <div
         css={{
           background: "#FFFFFF",
@@ -19,17 +18,6 @@ const CompanyElem = ({
         }}
       >
         <AdaptiveCenterDiv>
-          <div
-            css={{
-              display: "flex",
-              gap: "8px",
-              flexWrap: "wrap",
-            }}
-          >
-            {tags.map((tag) => (
-              <Tag type={tag} key={tag} />
-            ))}
-          </div>
           <div css={{ height: "8px" }} />
           <div css={{ display: "flex", gap: "8px" }}>
             <div
@@ -47,6 +35,17 @@ const CompanyElem = ({
                 }}
               >
                 {name}
+              </div>
+              <div
+                css={{
+                  marginTop: "4px",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  lineHeight: "20px",
+                  color: "#98A2B3",
+                }}
+              >
+                {school}
               </div>
               <div
                 css={{
@@ -89,4 +88,4 @@ const CompanyElem = ({
   );
 };
 
-export default memo(CompanyElem);
+export default memo(StudentElem);
