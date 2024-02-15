@@ -5,7 +5,9 @@ import com.example.demo.domain.StudentMatchOffer;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Builder
@@ -16,6 +18,7 @@ public class OfferDto {
     private String requirement;
     private boolean isRewarded;
     private String money;
+    private LocalDateTime createdAt;
 
     private Long clientId;
     private Long researcherId;
@@ -40,6 +43,7 @@ public class OfferDto {
                                         .requirement(offer.getRequirement())
                                         .isRewarded(offer.isRewarded())
                                         .money(offer.getMoney())
+                                        .createdAt(offer.getCreatedAt())
                                         .clientId(offer.getCompany().getId())
                                         .researcherId(offer.getResearcher().getId())
                                         .type(Type.COMPANY)
@@ -54,12 +58,14 @@ public class OfferDto {
                                         .requirement(offer.getRequirement())
                                         .isRewarded(offer.isRewarded())
                                         .money(offer.getMoney())
+                                        .createdAt(offer.getCreatedAt())
                                         .clientId(offer.getStudent().getId())
                                         .researcherId(offer.getResearcher().getId())
                                         .type(Type.STUDENT)
                                         .build()).toList()
         );
 
+        offers.sort(Comparator.comparing(OfferDto::getCreatedAt).reversed());
         return offers;
     }
 }

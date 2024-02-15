@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 import com.example.demo.domain.member.Company;
 import com.example.demo.domain.member.Researcher;
+import com.example.demo.utils.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 @Entity
-public class CompanyMatchOffer {
+public class CompanyMatchOffer extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "company_match_offer_id")

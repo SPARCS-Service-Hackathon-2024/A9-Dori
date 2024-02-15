@@ -4,6 +4,8 @@ import com.example.demo.domain.member.Researcher;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
+
 @Builder
 @Getter
 public class ResearcherListDto {
@@ -17,6 +19,7 @@ public class ResearcherListDto {
     private boolean forStudent;
     private boolean isWorking;
     private boolean isMania;
+    private LocalDateTime createdAt;
 
     public static ResearcherListDto of(Researcher researcher) {
         return ResearcherListDto.builder()
@@ -28,6 +31,7 @@ public class ResearcherListDto {
                 .forCompany(researcher.isForCompany())
                 .forStudent(researcher.isForStudent())
                 .isMania(researcher.isMania())
+                .createdAt(researcher.getCreatedAt())
                 .build();
     }
 }
