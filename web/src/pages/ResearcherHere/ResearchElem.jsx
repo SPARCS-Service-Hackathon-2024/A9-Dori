@@ -34,6 +34,7 @@ const ResearchElem = ({
         >
           <Tag type="dori" />
           <Tag type="idea" />
+          <Tag type="tech" />
         </div>
         <div css={{ height: "8px" }} />
         <div css={{ display: "flex", gap: "8px" }}>
