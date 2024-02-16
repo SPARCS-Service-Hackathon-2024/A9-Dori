@@ -4,7 +4,7 @@ import HashTag from "../../../components/Tag/HashTag";
 import imgProfile from "./imgProfile.png";
 import iconDate from "./iconDate.svg";
 import iconBack from "./iconBack.svg";
-import LinkBack from "../../../components/Link/LinkBack";
+import { Link } from "react-router-dom";
 
 const Top = () => {
   return (
@@ -18,7 +18,7 @@ const Top = () => {
       }}
     >
       <AdaptiveCenterDiv>
-        <LinkBack>
+        <Link to="/chat">
           <img
             src={iconBack}
             css={{
@@ -27,7 +27,7 @@ const Top = () => {
               left: 0,
             }}
           />
-        </LinkBack>
+        </Link>
         <div
           css={{
             display: "flex",
@@ -53,7 +53,7 @@ const Top = () => {
             textAlign: "center",
           }}
         >
-          LG디스플레이 {">"}
+          퍼스트솔라 {">"}
         </div>
         <div
           css={{

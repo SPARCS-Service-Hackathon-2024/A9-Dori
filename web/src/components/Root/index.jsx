@@ -16,7 +16,9 @@ const Root = ({ children }) => {
     !pathname.includes("/selectStudent") &&
     !pathname.includes("/login") &&
     !pathname.includes("/signup") &&
-    !pathname.includes("/chat/talk");
+    !pathname.includes("/chat/talk") &&
+    !pathname.includes("/suggest/request") &&
+    !pathname.includes("/suggest/request/accept");
 
   const [userInfo, setUserInfo] = useRecoilState(userInfoAtom);
   useEffect(() => {

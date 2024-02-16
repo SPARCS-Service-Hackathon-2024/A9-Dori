@@ -5,6 +5,7 @@ import Category from "./Category";
 import Footer from "../../components/Footer";
 
 import imgExample from "./imgExample.png";
+import { Link } from "react-router-dom";
 
 const Suggest = () => {
   const [selectedCategory, setSelectedCategory] = useState("받은 제안");
@@ -39,7 +40,9 @@ const Suggest = () => {
       <div css={{ height: "2px" }} />
       <AdaptiveCenterDiv>
         {selectedCategory === "받은 제안" && (
-          <img src={imgExample} alt="" css={{ width: "100%" }} />
+          <Link to="/suggest/request">
+            <img src={imgExample} alt="" css={{ width: "100%" }} />
+          </Link>
         )}
       </AdaptiveCenterDiv>
       <Footer />
