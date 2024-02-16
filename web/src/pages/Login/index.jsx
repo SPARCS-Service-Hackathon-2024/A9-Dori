@@ -41,7 +41,7 @@ const Login = () => {
           <span css={{ fontWeight: 700, color: "#717BBC", fontSize: "24px" }}>
             리
           </span>
-          <span>서치</span>
+          <span>서처</span>
         </div>
       </AdaptiveCenterDiv>
       <Footer />
