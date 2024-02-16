@@ -11,6 +11,7 @@ import Manufacturer from "./pages/Signup/Manufacturer";
 import Researcher from "./pages/Signup/Researcher";
 import Complete from "./pages/Signup/Complete";
 import Suggest from "./pages/Suggest";
+import Request from "./pages/Suggest/Request";
 import Chat from "./pages/Chat";
 import Mypage from "./pages/Mypage";
 import SelectUser from "./pages/SelectUser";
@@ -23,6 +24,7 @@ import Communicate from "./pages/Communicate";
 
 import "./App.css";
 import "./assets/fonts/index.css";
+import Accept from "./pages/Suggest/Accept";
 
 const App = () => (
   <RecoilRoot>
@@ -38,6 +40,8 @@ const App = () => (
           <Route path="/signup/complete" Component={Complete} />
           <Route path="/home" Component={Main} />
           <Route path="/suggest" Component={Suggest} />
+          <Route path="/suggest/request" Component={Request} />
+          <Route path="/suggest/request/accept" Component={Accept} />
           <Route path="/chat" Component={Chat} />
           <Route path="/chat/talk" Component={Talk} />
           <Route path="/mypage" Component={Mypage} />
